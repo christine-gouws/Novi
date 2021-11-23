@@ -1,0 +1,19 @@
+ .button-form  {
+  font-size: bold 1rem;
+  padding: 0.5em;
+  height: 100%;
+  width: 50%;
+  font-weight: 900;
+  border-radius: 35px;
+  background-color: grey;
+  color: #FFF;
+  margin: 2px auto;
+  text-align: center;
+
+  &:focus {
+    outline: 0;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
