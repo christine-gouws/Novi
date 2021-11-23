@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Brand.create!(
+  brand_name: "freitag",
+  description: 'noice',
+  origin: "no idea",
+  carbon_footprint: "small",
+  ethics: "no small childeren",
+  material_resources: "old",
+  user_id: 1
+)
+
+Brand.create!(
+  brand_name: "vans",
+  description: 'noice',
+  origin: "no idea",
+  carbon_footprint: "small",
+  ethics: "a lot of small childeren",
+  material_resources: "old",
+  user_id: 1
+)

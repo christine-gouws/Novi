@@ -1,0 +1,40 @@
+.posts{
+  margin: 0 auto;
+  width: 900px;
+  height: fit-content;
+}
+
+.post {
+  background-color: lightcoral;
+  width: 100%;
+  height: fit-content;
+  margin: 8px 0;
+  h3{
+    font-size: 2rem;
+  }
+  p {
+    color: grey;
+    font-size: medium;
+  }
+  a{
+    color: black;
+    font-size: 24px;
+  }
+}
+
+.sub_post {
+  background-color: rgb(30, 85, 119);
+  height: fit-content;
+  margin-left:24px;
+  h3{
+    font-size: 1.5rem;
+  }
+  p {
+    color: grey;
+    font-size: small;
+  }
+  a{
+    color: black;
+    font-size: 24px;
+  }
+}
