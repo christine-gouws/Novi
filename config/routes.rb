@@ -6,10 +6,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :brands, only: [:show]
-  resources :posts, only: [:create]
+  resources :posts, only: [:create, :destroy]
   resources :followings, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
-  resources :ratings, only: [:create, :destroy]
-
-
+  resources :ratings, only: [:create]
 end

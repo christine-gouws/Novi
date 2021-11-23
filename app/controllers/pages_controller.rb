@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -12,5 +12,10 @@ class PagesController < ApplicationController
   end
 
   def home
+    redirect_to feed_path if user_signed_in?
+  end
+
+  def feed
+    @brands = Brand.all
   end
 end

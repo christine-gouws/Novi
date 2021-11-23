@@ -1,0 +1,8 @@
+ <% post.posts.each do |sub_post| %>
+    <div class="sub_post">
+        <h3><%= sub_post.comment %></h3>
+          <%= link_to '🗑', post_path(sub_post, params:{ brand_id: @brand.id }), method: :delete %>
+        <p><%= sub_post.user.email %></p>
+    </div>
+    <%= render "posts/posts", post: sub_post %>
+<% end %>
