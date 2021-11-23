@@ -30,7 +30,7 @@ class BrandsController < ApplicationController
     @ratings.each do |rating|
       total += rating.rating
     end
-    total / @ratings.length
+    total / @ratings.length if @ratings.length.positive?
   end
 
 end
