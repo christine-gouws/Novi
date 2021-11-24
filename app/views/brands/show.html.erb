@@ -15,15 +15,23 @@
         <% end %>
       </div>
     </div>
-    <h1><%= @brand.description %></h1>
+    <h1 class="b-description"><%= @brand.description %></h1>
       <div class="b-item">
         <p>Brand</p> <%= @brand.brand_name%>
       </div>
       <div class="b-item">
         <p>Origin</p> <%= @brand.origin%>
       </div>
-</div>
-
+      <div class="b-item">
+        <p>Carbon Footprint</p> <%= @brand.carbon_footprint%>
+      </div>
+      <div class="b-item">
+        <p>Ethics</p> <%= @brand.ethics%>
+      </div>
+      <div class="b-item">
+        <p>Material Resources</p> <%= @brand.material_resources%>
+      </div>
+  </div>
 </div>
 
 <div class="rating">
