@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.brand-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.75rem;
+  margin-top: 5em;
+  background-color: white;
+}
+
+.brand-item {
+  display: flex;
+  justify-content: space-between;
+}

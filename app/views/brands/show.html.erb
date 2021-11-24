@@ -1,15 +1,30 @@
-<h1><%= @brand.brand_name %></h1>
-<%= @avg_rating %>
+<div class="container">
+  <div class="brand-container">
+    <div class="brand-items">
+      <h1><%= @brand.brand_name %></h1>
+      <%= @avg_rating %>
+      <div class="follow">
+        <% if @following.present? %>
+          <%= link_to "UNFOLLOW", following_path(@following), method: :delete %>
+        <% else %>
+          <%= simple_form_for @new_following do |f| %>
+            <%= f.submit "Follow" %>
+            <%= f.input :followable_type,input_html:{value: "Brand"} , as: :hidden %>
+            <%= f.input :followable_id, input_html: {value: @brand.id} , as: :hidden %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <h1><%= @brand.description %></h1>
+      <div class="b-item">
+        <p>Brand</p> <%= @brand.brand_name%>
+      </div>
+      <div class="b-item">
+        <p>Origin</p> <%= @brand.origin%>
+      </div>
+</div>
 
-<% if @following.present? %>
-  <%= link_to "UNFOLLOW", following_path(@following), method: :delete %>
-<% else %>
-  <%= simple_form_for @new_following do |f| %>
-    <%= f.submit "Follow" %>
-    <%= f.input :followable_type,input_html:{value: "Brand"} , as: :hidden %>
-    <%= f.input :followable_id, input_html: {value: @brand.id} , as: :hidden %>
-  <% end %>
-<% end %>
+</div>
 
 <div class="rating">
   <%= simple_form_for @rating do |f| %>
@@ -19,44 +34,48 @@
   <% end %>
 </div>
 
-<div class="posts bg-white p-3">
-  <%= simple_form_for @new_post do |f| %>
-    <%= f.input :comment %>
-    <%= f.submit "Create Post" %>
-    <%= f.input :messageable_type, input_html:{value: "Brand"} , as: :hidden %>
-    <%= f.input :messageable_id, input_html:{value: @brand.id} , as: :hidden %>
-    <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
+<div class="posts">
 
-  <% end %>
 
-  <% @posts.each do |post| %>
-    <% if post.messageable_id == @brand.id %>
-      <div class="post p-2">
-      <div>
-        <h3><%= post.comment %></h3>
-        <p><%= post.user.email %></p>
-        <%= post.likes.count %>
-      </div>
-      <div>
-        <%= simple_form_for @like do |f| %>
-          <%= f.submit "👍" %>
-          <%= f.input :post_id, input_html: {value: post.id} , as: :hidden %>
-        <% end %>
-      </div>
-      <div>
-        <%= link_to '🗑', post_path(post, params:{ brand_id: @brand.id }), method: :delete %>
-        <%= simple_form_for @new_post do |f| %>
-          <%= f.input :comment %>
-          <%= f.submit 'Comment'%>,
-          <%= f.input :messageable_type, input_html:{value: "Post"} , as: :hidden %>
-          <%= f.input :messageable_id, input_html:{value: post.id} , as: :hidden %>
-          <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
-      <% end %>
-      </div>
-      <%= render "posts/posts", post: post %>
-      </div>
+  <div class="posts bg-white p-3">
+    <%= simple_form_for @new_post do |f| %>
+      <%= f.input :comment %>
+      <%= f.submit "Create Post" %>
+      <%= f.input :messageable_type, input_html:{value: "Brand"} , as: :hidden %>
+      <%= f.input :messageable_id, input_html:{value: @brand.id} , as: :hidden %>
+      <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
+
     <% end %>
-  <% end %>
+
+    <% @posts.each do |post| %>
+      <% if post.messageable_id == @brand.id %>
+        <div class="post p-2">
+        <div>
+          <h3><%= post.comment %></h3>
+          <p><%= post.user.email %></p>
+          <%= post.likes.count %>
+        </div>
+        <div>
+          <%= simple_form_for @like do |f| %>
+            <%= f.submit "👍" %>
+            <%= f.input :post_id, input_html: {value: post.id} , as: :hidden %>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to '🗑', post_path(post, params:{ brand_id: @brand.id }), method: :delete %>
+          <%= simple_form_for @new_post do |f| %>
+            <%= f.input :comment %>
+            <%= f.submit 'Comment'%>,
+            <%= f.input :messageable_type, input_html:{value: "Post"} , as: :hidden %>
+            <%= f.input :messageable_id, input_html:{value: post.id} , as: :hidden %>
+            <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
+        <% end %>
+        </div>
+        <%= render "posts/posts", post: post %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
 <%= link_to "Back", feed_path %>
