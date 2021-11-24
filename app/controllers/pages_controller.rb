@@ -7,8 +7,19 @@ class PagesController < ApplicationController
 
   def feed
     @brands = Brand.all
+    @users = User.all
   end
 
   def profile
+    following?
+    @new_following = Following.new
   end
+
+   private
+
+  def following?
+    # @brand = Brand.find(params[:id])
+    @following = Following.find_by(user: current_user, followable: @user)
+  end
+
 end

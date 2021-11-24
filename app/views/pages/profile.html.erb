@@ -1,1 +1,31 @@
-<h1><%= current_user.first_name%> <%= current_user.last_name %></h1>
+<div class="container">
+  <div class="brand-container">
+    <div class="brand-items">
+      <p>Welcome back</p>
+      <h1><%= current_user.first_name.capitalize%></h1>
+      <p><%= current_user.followings.length%></p>
+      
+    </div>
+      
+      <div class="b-info">
+        <h5 class="b-description"><strong>Description</strong><br> <%= current_user.description %></h5>
+          <div class="b-item">
+            <h5>Recent Activity</h5>
+          </div>
+          <div class="b-item">
+            <h5>Likes</h5>
+              <% current_user.likes.each do |like| %>
+              <%= like.post.comment %>
+              <% end%>
+          </div>
+          <div class="follow-container">
+            <h5>Follows</h5>
+              <% current_user.followings.each do |following| %>
+              <p> followed </p><%= following.followable.brand_name if following.followable_type == "Brand" %>
+              <%= following.user.first_name if following.followable_type == "User" %>
+              <% end%>
+          </div>
+      </div>
+<%= link_to "Back", feed_path %>
+  </div>
+</div>
