@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   def feed
     @brands = Brand.all
+    @users = User.all
   end
 
   def profile

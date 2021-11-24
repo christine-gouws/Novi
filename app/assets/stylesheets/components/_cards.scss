@@ -1,0 +1,16 @@
+.brand-card{
+  background-color: $light;
+  height: 200px;
+  width: 200px;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brands-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  margin: 0 auto;
+}
