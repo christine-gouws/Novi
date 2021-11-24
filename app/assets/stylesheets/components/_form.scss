@@ -1,3 +1,16 @@
+.home-page{
+  height: 100vh;
+}
+
+#myVideo {
+    position: fixed;
+    left: 0;
+    // transform: rotate(90deg);
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
 
 
 .form-header {
@@ -10,7 +23,7 @@
 .card {
   width: 100%;
   max-width: 500px;
-  background-color: rgb(253, 255, 165);
+  background-color: $light;
   border-radius: 10px;
   box-shadow: 0 10px 20px 0 rgba(#999, .25);
   padding: 1rem 1.75rem;

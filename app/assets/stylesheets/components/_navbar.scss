@@ -1,12 +1,77 @@
+.novi-title{
+  font-weight: bolder;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
+  align-items: center;
   background: white;
+  height: 8vh;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+.navbar-brand {
+  display: flex;
+}
 .navbar-lewagon .navbar-brand img {
+  object-fit: cover;
   width: 40px;
+}
+
+.nav-link {
+  text-decoration: underline;
+  color: $light;
+    a {
+      color: $light;
+      text-decoration: none;
+    }
+
+    :hover {
+      color: #f75e59;
+      text-decoration: none;
+    }
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #F9F9F9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  color: $light;
+
+   a{
+     color: $medium;
+     text-decoration: none;
+   }
+
+   :hover {
+     color: $medium;
+     text-decoration: none;
+   }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+ul.dropdown-content {
+  list-style-type: none;
+  text-align: right;
+
 }

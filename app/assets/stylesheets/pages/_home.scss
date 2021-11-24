@@ -1,12 +1,22 @@
 // Specific CSS for your home-page
-body{
-  background-size: 0;
-  background-color: rgb(253, 255, 165);
+.home-page{
+  height: 100vh;
+}
+
+#myVideo {
+    position: fixed;
+    left: 0;
+    // transform: rotate(90deg);
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
 }
 
 .container {
   display: flex;
   justify-content: center;
+  // background-color: $dark;
 }
 
 .home-container{
@@ -19,13 +29,13 @@ body{
 
 .home-header {
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 900;
 }
 
 .home-text {
   text-align: center;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: lighter;
   padding: 1em;
   margin-top: 3em;
@@ -40,13 +50,9 @@ body{
 
 @media(min-width: 361px) {
 
-  body{
-    background-image: url('https://images.pexels.com/photos/9436715/pexels-photo-9436715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-    background-size: cover;
 
-  }
   .home-container {
-    background-color: rgb(253, 255, 165);
+    background-color: $light;
     max-width: 425px;
     border-radius: 25px;
     height: 590px;

@@ -1,0 +1,33 @@
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="<%= root_path %>" >
+
+    <h3 class="novi-title">NOVI</h3>
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+
+      </li>
+      <li class="dropdown">
+      <% if user_signed_in? %>
+        <%= cl_image_tag current_user.photo.key, height: 50, width: 50, class: "avatar-large" %>
+      <% else %>
+        <a class="btn btn-ghost" href="#">Account</a>
+      <% end %>
+      <ul class="dropdown-content">
+        <% if user_signed_in? %>
+          <%= link_to 'Profile', profile_path %>
+        <%else %>
+
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</div>
