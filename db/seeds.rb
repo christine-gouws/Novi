@@ -39,3 +39,4 @@ users = [tina, layla, hans]
   brand.save!
   p brand
 end
+
