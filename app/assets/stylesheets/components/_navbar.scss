@@ -1,3 +1,6 @@
+// Desktop
+@media only screen and(min-device-width: 1024px) {
+
 .novi-title{
   font-weight: bolder;
 }
@@ -73,5 +76,15 @@
 ul.dropdown-content {
   list-style-type: none;
   text-align: right;
+}
 
+
+}
+
+// Tablet
+@media only screen and(max-device-width: 1024px) {
+}
+
+// Mobile
+@media only screen and(max-device-width: 480px) {
 }

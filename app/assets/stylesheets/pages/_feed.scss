@@ -1,5 +1,133 @@
+
+// Mobile
+@media only screen and (max-device-width: 480px) {
+body{
+  height: 200vh;
+
+}
+
 .feed-page{
   background-color: $off-white;
+
+}
+
+.latest {
+  height: 60vh;
+  width: 100%;
+  background-color: #180f0c;
+  h2 {
+    font-size: 4rem;
+    color: $off-white;
+    padding: 1rem 5rem;
+  }
+}
+
+
+.search-nav {
+  background-color: red;
+  height: 10vh  ;
+}
+
+
+}
+// Tablet
+@media only screen and (max-device-width: 1024px) {
+
+  body{
+  height: 200vh;
+
+}
+
+.feed-page{
+  background-color: $off-white;
+
+}
+
+.latest {
+  height: 60vh;
+  width: 100%;
+  background-color: #180f0c;
+  h2 {
+    font-size: 4rem;
+    color: $off-white;
+    padding: 1rem 5rem;
+  }
+}
+
+
+.search-nav {
+  background-color: red;
+  height: 10vh  ;
+}
+
+
+}
+// Desktop
+@media only screen and (min-device-width: 1024px) {
+
+body{
+  height: 200vh;
+
+}
+
+.img-container{
+  position: relative;
+  width: 70vw;
+  height: 75vh;
+  margin: 0 auto;
+}
+
+#first{
+  position: absolute;
+  top:0px;
+  left: 0px;
+  background-image:url('https://images.pexels.com/photos/4210866/pexels-photo-4210866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  width: 500px;
+  height: 400px;
+  background-size: cover;
+  background-position: bottom;
+  z-index: 1;
+}
+
+#second{
+  position: absolute;
+  top: 100px;
+  left: 480px;
+  background-image:url('https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  width: 450px;
+  height: 300px;
+  background-size: cover;
+  background-position: bottom;
+  z-index: 2;
+}
+
+#third{
+   position: absolute;
+  top:250px;
+  left: 120px;
+  background-image:url('https://images.pexels.com/photos/4937449/pexels-photo-4937449.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: bottom;
+  z-index: 3;
+}
+
+#fourth{
+  position: absolute;
+  top: 300px;
+  left: 420px;
+  background-image:url('https://images.pexels.com/photos/5405623/pexels-photo-5405623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: bottom;
+  z-index: 4;
+}
+
+.feed-page{
+  background-color: $off-white;
+
 }
 
 .latest {
@@ -16,5 +144,6 @@
 
 .search-nav {
   background-color: red;
-  height: 200px;
+  height: 10vh  ;
+}
 }
