@@ -1,0 +1,109 @@
+
+.b-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.brand-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.75rem;
+  margin-top: 5em;
+  background-color: white;
+}
+
+.b-table tr{
+  border-bottom: solid 1px black;
+  word-break: normal;
+  .table-content{
+    text-align: left;
+    font-size: 10px;
+  }
+  td {
+    padding: 10px 3px;
+    width: 350px;
+  }
+}
+
+.posts{
+  width: 100%;
+  max-width: 500px;
+  padding: 0rem 1rem;
+  background-color: white;
+
+  h3{
+    margin-top: -2em;
+  }
+}
+.brand-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.b-description {
+  padding: 20px 0px 50px 0px;
+}
+
+label {
+display: none;
+}
+
+// Desktop
+@media(min-width: 1024px) {
+  .b-container {
+    margin-left: -20px;
+    max-width: 800px;
+    background-color: white;
+
+  }
+  .brand-container{
+    max-width: 600px;
+    padding-left: 8em;
+  }
+  .posts {
+    max-width: 600px;
+    padding-left: 7em;
+    padding-bottom: 3em;
+  }
+  .b-image{
+    position: absolute;
+    bottom: 10em;
+    right: 25em;
+    }
+}
+// Tablet
+@media(max-width: 1024px) {
+  .b-container{
+   background-color: white;
+ }
+  .b-image{
+    position: absolute;
+    bottom: 20em;
+    right: 2em;
+    img {
+      width: 250px;
+     }
+  }
+    .brand-container{
+    max-width: 400px;
+    padding-left: 8em;
+  }
+}
+
+// Mobile
+@media(max-width: 480px) {
+.brand-container{
+  width: 100%;
+  max-width: 500px;
+   padding-left: 1em;
+  }
+  .b-container{
+    background-color: white;
+  }
+  .b-image{
+    display: none;
+  }
+}

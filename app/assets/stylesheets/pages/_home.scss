@@ -24,7 +24,7 @@
   max-width: 500px;
   padding: 1rem 1.75rem;
   margin-top: 5em;
-
+  background-color: white;
 }
 
 .home-header {
@@ -47,8 +47,8 @@
 }
 
 
-
-@media(min-width: 361px) {
+// Desktop
+@media(min-width: 45px) {
 
 
   .home-container {
