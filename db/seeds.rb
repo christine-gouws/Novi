@@ -13,7 +13,7 @@ Brand.create!(
   carbon_footprint: "small",
   ethics: "no small childeren",
   material_resources: "old",
-  user_id: 1
+  user_id: 4
 )
 
 Brand.create!(
@@ -23,5 +23,5 @@ Brand.create!(
   carbon_footprint: "small",
   ethics: "a lot of small childeren",
   material_resources: "old",
-  user_id: 1
+  user_id: 4
 )
