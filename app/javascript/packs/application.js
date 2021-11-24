@@ -15,8 +15,7 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-import { initStarRating } from '../plugins/init_star_rating';
-initStarRating();
+
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -28,8 +27,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initStarRating();
 });
