@@ -1,5 +1,13 @@
 class BrandsController < ApplicationController
 
+  def index
+    if params[:query].present?
+      @brands = Brand.where(brand_name: params[:query])
+    else
+      @brands = Brand.all
+    end
+  end
+
   def show
     @posts = Post.all
     @brand = Brand.find(params[:id])

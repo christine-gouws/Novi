@@ -7,8 +7,18 @@
       <img src="" alt="">
       <img src="" alt="">
     </div>
-    <div class="search-nav"></div>
   </div>
+
+    <div class="search-nav">
+        <%= form_tag "/brands", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search__input",
+          placeholder: "Search for a brand",
+          type: "text"
+        %>
+        <% end %>
+    </div>
   <div class='brands-container'>
     <% @brands.each do |brand| %>
       <div class="brand-card">
