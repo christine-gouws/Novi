@@ -1,1 +1,74 @@
 // Specific CSS for your home-page
+body{
+  background-size: 0;
+  background-color: rgb(253, 255, 165);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.home-container{
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.75rem;
+  margin-top: 5em;
+
+}
+
+.home-header {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.home-text {
+  text-align: center;
+  font-size: 30px;
+  font-weight: lighter;
+  padding: 1em;
+  margin-top: 3em;
+}
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+@media(min-width: 361px) {
+
+  body{
+    background-image: url('https://images.pexels.com/photos/9436715/pexels-photo-9436715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+
+  }
+  .home-container {
+    background-color: rgb(253, 255, 165);
+    max-width: 425px;
+    border-radius: 25px;
+    height: 590px;
+  }
+  .home-text {
+    padding: 2em;
+    margin-top: 1em;
+    font-size: 36px;
+  }
+  .home-header {
+    margin-top: 1em;
+  }
+  .button-form {
+    height: 40px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+  color: inherit;
+}
