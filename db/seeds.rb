@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
 Rating.destroy_all
 Like.destroy_all
 Post.destroy_all
@@ -32,8 +34,8 @@ users = [tina, layla, hans]
     carbon_footprint: Faker::Commerce.price,
     ethics: Faker::Company.buzzword,
     material_resources: Faker::Address.country,
-    user_id: users.sample
+    user: users.sample
   )
-  brand.save
+  brand.save!
   p brand
 end
