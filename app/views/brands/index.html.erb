@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div id="brands">
+        <% @brands.each do |brand| %>
+          <h4><%= brand.brand_name %></h4>
+          <p><%= brand.description %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
