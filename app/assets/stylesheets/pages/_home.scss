@@ -14,7 +14,7 @@ body{
   max-width: 500px;
   padding: 1rem 1.75rem;
   margin-top: 5em;
-
+  background-color: white;
 }
 
 .home-header {
@@ -37,8 +37,8 @@ body{
 }
 
 
-
-@media(min-width: 361px) {
+// Desktop
+@media(min-width: 45px) {
 
   body{
     background-image: url('https://images.pexels.com/photos/9436715/pexels-photo-9436715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');

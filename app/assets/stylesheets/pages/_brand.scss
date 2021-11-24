@@ -1,6 +1,9 @@
+
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  position: relative;
 }
 
 .brand-container {
@@ -11,13 +14,81 @@
   background-color: white;
 }
 
+.b-table tr{
+  border-bottom: solid 1px black;
+  word-break: normal;
+  .table-content{
+    text-align: left;
+    font-size: 12px;
+  }
+  td {
+    padding: 10px 2px;
+    width: 350px;
+  }
+}
+
+.posts{
+  width: 100%;
+  max-width: 500px;
+  padding: 0rem 1rem;
+  background-color: white;
+
+  h3{
+    margin-top: -2em;
+  }
+}
 .brand-items {
   display: flex;
   justify-content: space-between;
 }
 
-.b-item {
- display:flex;
- justify-content:space-between;
- border-bottom: solid 1px black;
+.b-image{
+position: absolute;
+bottom: 10em;
+right: 25em;
+}
+
+
+.b-description {
+  padding: 20px 0px 50px 0px;
+}
+
+label {
+display: none;
+}
+
+// Mobile
+@media(max-width: 480px) {
+.brand-container{
+  width: 100%;
+  max-width: 500px;
+  }
+  .container{
+    background-color: white;
+  }
+  .b-image{
+    display: none;
+  }
+}
+// Tablet
+@media(max-width: 1024px) {
+
+}
+// Desktop
+@media(min-width: 1024px) {
+  .container {
+    margin-left: -20px;
+    max-width: 800px;
+    background-color: white;
+
+  }
+  .brand-container{
+    max-width: 600px;
+    padding-left: 8em;
+  }
+  .posts {
+    max-width: 600px;
+    padding-left: 7em;
+    padding-bottom: 3em;
+  }
 }
