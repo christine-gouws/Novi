@@ -1,3 +1,5 @@
+// Desktop
+@media only screen and (min-device-width: 1024px) {
 .brand-card{
   background-color: $light;
   height: 200px;
@@ -6,11 +8,126 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.brands-container{
+.brands-container-full{
+  height: 85vh;
+  overflow: scroll;
   display: flex;
   flex-wrap: wrap;
-  width: 1000px;
+  justify-content: center;
+  width: 100%;
+  padding: 0 15vw;
   margin: 0 auto;
+
+}
+.brands-container-mobile{
+  display: none;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $off-white;
+  height: 200px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #180f0c;
+  border-radius: 50px;
+  height: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+}
+
+// Tablet
+@media only screen and (max-device-width: 1024px) {
+
+  body::-webkit-scrollbar {
+  display: none;
+}
+  .brand-card{
+  background-color: $light;
+  height: 200px;
+  width: 200px;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.brands-container-full{
+  height: 82vh;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 0 15vw;
+  margin: 0 auto;
+
+}
+.brands-container-mobile{
+  display: none;
+}
+
+}
+
+// Mobile
+@media only screen and (max-device-width: 480px) {
+
+  body::-webkit-scrollbar {
+  display: none;
+}
+.brand-card{
+  background-color: $dark;
+  height: 120px;
+  width: 120px;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  a{
+    width: 120px;
+    text-align: center;
+  }
+}
+
+
+.brands-container-mobile{
+  height: fit-content;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 0 6vw;
+  margin: 0 auto;
+
+}
+.brands-container-full{
+  display: none;
+}
+
+
 }
