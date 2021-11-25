@@ -2,9 +2,13 @@ class BrandsController < ApplicationController
 
   def index
     if params[:query].present?
-      @brands = Brand.where(brand_name: params[:query])
+      @brands = Brand.where("brand_name ILIKE ?", "%#{params[:query]}%")
     else
       @brands = Brand.all
+    end
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'brands/list', locals: { brands: @brands }, formats: [:html] }
     end
   end
 
@@ -39,6 +43,10 @@ class BrandsController < ApplicationController
       total += rating.rating
     end
     total / @ratings.length if @ratings.length.positive?
+  end
+
+  def brand_params
+    params.require(:brand).permit(:query)
   end
 
 end
