@@ -6,6 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'Nokogiri'
+require 'URI'
+
+def scrape_zal(brand)
+  url = "https://www.etsy.com/search?q=#{brand}"
+  response = URI.open(url).read
+  html_doc = Nokogiri::HTML(response)
+  html_doc.search('.listing-link').first(10).each do |element|
+    zal_image:element.search('.data-listing-card-listing-image').text.strip
+    zal_name:element.search('.v2-listing-card__title').text.strip
+    zal_price:element.search('.currency-value').text.strip
+    Product.create(product_photo: zal_image, product_name: zal_name, product_price: zal_price)
+  end
+end
 
 Rating.destroy_all
 Like.destroy_all
@@ -37,6 +51,6 @@ users = [tina, layla, hans]
     user: users.sample
   )
   brand.save!
+  scrape_zal(brand)
   p brand
 end
-
