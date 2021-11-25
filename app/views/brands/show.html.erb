@@ -34,8 +34,18 @@
         </table>
       </div>
 
-  </div>
+
+      <div class="outgoing">
+        <h1> Products </h1>
+        <% @brand.products.each do|product|%>
+          <div class="p-card" style="background-image: url(<%=product.image_url%>)">
+            <p><% product.product_name %></p>
+            <p><% product.product_price %></p>
+          </div>
+        <% end %>
+      </div>
   <div class="posts">
+
     <div class="posts bg-white p-3">
     <h3>Thread</h3>
       <%= simple_form_for @new_post do |f| %>
@@ -80,12 +90,8 @@
   </div>
 </div>
 
-<% @brand.products.each do|product|%>
-<%= product.image_url %>
-<% end %>
-
 
 
 <div class="b-image">
-<%= image_tag "clothes.png", width: 400 %>
+  <%= image_tag "clothes.png", width: 400 %>
 </div>

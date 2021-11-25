@@ -1,4 +1,5 @@
 
+// container
 .b-container {
   display: flex;
   justify-content: center;
@@ -14,6 +15,7 @@
   background-color: white;
 }
 
+// brand description
 .b-table tr{
   border-bottom: solid 1px black;
   word-break: normal;
@@ -27,12 +29,32 @@
   }
 }
 
+//products
+
+.outgoing {
+  display:flex;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+.p-card{
+background-size: cover;
+background-position: center;
+height: 150px;
+width: 145px;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10px;
+}
+
+ //post
 .posts{
   width: 100%;
   max-width: 500px;
   padding: 0rem 1rem;
   background-color: white;
-
   h3{
     margin-top: -2em;
   }
@@ -42,7 +64,6 @@
   justify-content: space-between;
 }
 
-
 .b-description {
   padding: 20px 0px 50px 0px;
 }
@@ -50,6 +71,7 @@
 label {
 display: none;
 }
+
 
 // Desktop
 @media(min-width: 1024px) {
