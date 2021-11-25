@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   def feed
     @brands = Brand.all
     @users = User.all
+    @top12 = Following.where(user: current_user, followable_type: "Brand")
   end
 
   def profile
