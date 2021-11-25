@@ -6,21 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-require 'Nokogiri'
-require 'URI'
+require 'uri'
+require 'nokogiri'
 
 def scrape_zal(brand)
-  url = "https://www.etsy.com/search?q=#{brand}"
-  response = URI.open(url).read
+  url = "https://www.etsy.com/search?q=#{brand.brand_name}"
+  p url
+  response = URI.parse(url).open.read
   html_doc = Nokogiri::HTML(response)
-  html_doc.search('.listing-link').first(10).each do |element|
-    zal_image:element.search('.data-listing-card-listing-image').text.strip
-    zal_name:element.search('.v2-listing-card__title').text.strip
-    zal_price:element.search('.currency-value').text.strip
-    Product.create(product_photo: zal_image, product_name: zal_name, product_price: zal_price)
+  html_doc.search('.v2-listing-card').first(10).each do |element|
+    zal_image = element.search('.wt-width-full').attr('src').text.strip
+    zal_name = element.search('.v2-listing-card__title').text.strip
+    zal_price = element.search('.currency-value').text.strip
+    product = Product.create(product_name: zal_name, product_price: zal_price, brand: brand, image_url: zal_image)
+    p product
   end
 end
 
+Product.destroy_all
+Following.destroy_all
 Rating.destroy_all
 Like.destroy_all
 Post.destroy_all
@@ -40,7 +44,7 @@ file = File.open((Rails.root.join('app', 'assets', 'images', 'layla.jpg')))
 layla.photo.attach(io: file, filename: 'layla.jpg', content_type: 'image/jpg')
 p layla
 users = [tina, layla, hans]
-100.times do
+50.times do
   brand = Brand.new(
     brand_name: Faker::Commerce.brand,
     description: Faker::Company.type,
@@ -52,5 +56,5 @@ users = [tina, layla, hans]
   )
   brand.save!
   scrape_zal(brand)
-  p brand
+  p brand.brand_name
 end

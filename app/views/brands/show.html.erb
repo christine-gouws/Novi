@@ -80,6 +80,12 @@
   </div>
 </div>
 
+<% @brand.products.each do|product|%>
+<%= product.image_url %>
+<% end %>
+
+
+
 <div class="b-image">
 <%= image_tag "clothes.png", width: 400 %>
 </div>
