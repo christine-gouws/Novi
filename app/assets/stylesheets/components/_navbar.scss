@@ -5,10 +5,14 @@
   font-weight: bolder;
 }
 
+.cam {
+  display: none;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background: $off-white;
   height: 8vh;
   position: sticky;
   width: 100%;
@@ -52,7 +56,7 @@
   display: none;
   position: absolute;
   right: 0;
-  background-color: #F9F9F9;
+  background-color: $off-white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
@@ -83,8 +87,86 @@ ul.dropdown-content {
 
 // Tablet
 @media only screen and(max-device-width: 1024px) {
+
+.novi-title{
+  font-weight: bolder;
+  color: $dark;
 }
+
+.navbar-lewagon {
+  justify-content: space-between;
+  align-items: center;
+  background: $off-white;
+  height: 8vh;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.dropdown-content{
+  display: none;
+}
+
+.dropdown{
+  display: none;
+}
+
+.navbar-collapse {
+    flex-basis: 183%;
+    flex-grow: 0;
+    align-items: center;
+}
+
+.cam {
+  display: block ;
+  color: $dark;
+  font-size: 2rem;
+}
+
+
+}
+
 
 // Mobile
 @media only screen and(max-device-width: 480px) {
+
+
+.novi-title{
+  font-weight: bold;
+  color: $off-white;
+}
+.cam{
+  display: block ;
+  color: $off-white;
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  align-items: center;
+  background: $dark;
+  height: 8vh;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-brand {
+  display: flex;
+}
+.navbar-lewagon .navbar-brand img {
+  object-fit: cover;
+  width: 40px;
+}
+
 }

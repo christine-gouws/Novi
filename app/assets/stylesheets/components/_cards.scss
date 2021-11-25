@@ -12,7 +12,7 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.brands-container{
+.brands-container-full{
   height: 85vh;
   overflow: scroll;
   display: flex;
@@ -22,6 +22,9 @@
   padding: 0 15vw;
   margin: 0 auto;
 
+}
+.brands-container-mobile{
+  display: none;
 }
 
 
@@ -56,6 +59,9 @@ body::-webkit-scrollbar {
 // Tablet
 @media only screen and (max-device-width: 1024px) {
 
+  body::-webkit-scrollbar {
+  display: none;
+}
   .brand-card{
   background-color: $light;
   height: 200px;
@@ -68,8 +74,8 @@ body::-webkit-scrollbar {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.brands-container{
-  height: 80vh;
+.brands-container-full{
+  height: 82vh;
   overflow: scroll;
   display: flex;
   flex-wrap: wrap;
@@ -78,6 +84,9 @@ body::-webkit-scrollbar {
   padding: 0 15vw;
   margin: 0 auto;
 
+}
+.brands-container-mobile{
+  display: none;
 }
 
 }
@@ -85,28 +94,39 @@ body::-webkit-scrollbar {
 // Mobile
 @media only screen and (max-device-width: 480px) {
 
+  body::-webkit-scrollbar {
+  display: none;
+}
 .brand-card{
-  background-color: $light;
-  height: 100px;
-  width: 100px;
+  background-color: $dark;
+  height: 120px;
+  width: 120px;
   margin: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  a{
+    width: 120px;
+    text-align: center;
+  }
 }
 
-.brands-container{
-  height: 80vh;
+
+.brands-container-mobile{
+  height: fit-content;
   overflow: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  padding: 0 15vw;
+  padding: 0 6vw;
   margin: 0 auto;
 
+}
+.brands-container-full{
+  display: none;
 }
 
 

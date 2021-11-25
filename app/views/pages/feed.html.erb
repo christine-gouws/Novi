@@ -1,16 +1,34 @@
 <div class="feed-page">
   <div class="latest">
-    <h2>LATEST</h2>
+    <h2>latest</h2>
+    <div class="mobile-pics">
+      <div id="first-m"></div>
+      <div id="second-m"></div>
+      <div id="third-m"></div>
+      <div id="fourth-m"></div>
+    </div>
+    <div class="products-first">
+      <% @top12.each do |brand| %>
+      <div class="brand-card">
+        <%= link_to brand.followable.brand_name, brand_path(brand.followable) %>
+      </div>
+    <% end %>
+    </div>
+
+
     <div class='img-container'>
       <div id="first"></div>
       <div id="second"></div>
       <div id="third"></div>
       <div id="fourth"></div>
     </div>
+
+
   </div>
 
     <div class="search-nav">
-        <%= form_tag "/brands", method: :get do %>
+        <h2>Our Brands</h2>
+        <%= form_tag "/Brands", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "search__input",
@@ -19,10 +37,20 @@
         %>
         <% end %>
     </div>
-  <div class='brands-container'>
+
+
+  <div class='brands-container-full'>
     <% @brands.each do |brand| %>
       <div class="brand-card">
         <%= link_to brand.brand_name, brand_path(brand) %>
+      </div>
+    <% end %>
+  </div>
+    <h2 class="top-title">your top</h2>
+   <div class='brands-container-mobile'>
+    <% @top12.each do |brand| %>
+      <div class="brand-card">
+        <%= link_to brand.followable.brand_name, brand_path(brand.followable) %>
       </div>
     <% end %>
   </div>
