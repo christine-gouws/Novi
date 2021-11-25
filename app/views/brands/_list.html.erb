@@ -1,0 +1,5 @@
+ <% brands.each do |brand| %>
+        <div class="brand-card">
+          <%= link_to brand.brand_name, brand_path(brand) %>
+        </div>
+      <% end %>

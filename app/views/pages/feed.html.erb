@@ -1,3 +1,4 @@
+<div data-controller="brands-filter">
 <div class="feed-page">
   <div class="latest">
     <h2>latest</h2>
@@ -26,6 +27,7 @@
 
   </div>
 
+<<<<<<< HEAD
     <div class="search-nav">
         <h2>Our Brands</h2>
         <%= form_tag "/Brands", method: :get do %>
@@ -52,6 +54,37 @@
       <div class="brand-card">
         <%= link_to brand.followable.brand_name, brand_path(brand.followable) %>
       </div>
+=======
+
+<div data-controller="search-brands">
+    <div class="search-nav" data-brands-filter-target="content">
+        <%= form_with url: brands_path, method: :get, html: { class:
+        'mb-4', data: { search_brands_target: 'form' } } do |f| %>
+        <%= f.text_field :query,
+                     class: "form-control",
+                     placeholder: 'Type a brand name',
+                     value: params[:query],
+                     data: { search_brands_target: 'input', action: 'keyup->search-brands#update'} %>
+                     <% end %>
+    </div>
+
+<div data-search-brands-target='list'>
+  <div class='brands-container'>
+      <% @brands.each do |brand| %>
+        <div class="brand-card">
+          <%= link_to brand.brand_name, brand_path(brand) %>
+        </div>
+      <% end %>
+    <%= link_to 'Log out', destroy_user_session_path, class:'btn border bg-light m-2', method: :delete %>
+    <%= link_to 'profile', profile_path, class: "btn border bg-light m-2" %>
+    </div>
+</div>
+
+  <div>
+    <% @users.each do |user| %>
+      <%= link_to user.first_name, user_path(user) %>
+>>>>>>> master
     <% end %>
   </div>
+</div>
 </div>
