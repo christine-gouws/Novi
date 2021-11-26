@@ -16,6 +16,7 @@ body{
   display: none;
 }
 
+
 #first{
   position: absolute;
   top:0px;
@@ -74,7 +75,7 @@ body{
 }
 
 .latest {
-  height: 100vh;
+  height: 92vh;
   width: 100%;
   background-color: #180f0c;
   h2 {
@@ -87,7 +88,7 @@ body{
 
 .search-nav {
   background-color: $off-white;
-  padding: 2rem;
+  padding: 2rem 33.5vw;
   height: 10vh;
   display: flex;
   flex-direction: column;
@@ -146,7 +147,6 @@ body{
 @media only screen and (max-device-width: 480px) {
 body{
   height: fit-content;
-
 }
 
 .feed-page{
@@ -157,7 +157,7 @@ body{
 .latest {
   position: relative;
   top: -7vh;
-  height: 80vh;
+  height: 90vh;
   width: 100vw;
   background-color: $off-white;
   h2 {
@@ -168,21 +168,7 @@ body{
 }
 
 
-.search-nav {
-  display: none;
-  background-color: $off-white;
-  height: 10vh  ;
-  h2{
-    margin: 1rem;
-    padding-top: 1rem;
-  }
-}
 
-.search {
-  &__input {
-    display: none;
-  }
-}
 
 .top-title {
   display: block;
@@ -195,7 +181,6 @@ body{
   width: 100vw;
   height: 30vh;
   background-color: $light;
-  margin: 15px auto;
   position: relative;
 }
 
@@ -213,13 +198,12 @@ body{
 }
 
 .products-first{
-  margin-top: 60px;
-  height: 200px;
+  margin-top: 80px;
+  height: 230px;
   width: 100vw;
   background-color: $off-white;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-
 }
 }

@@ -47,6 +47,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin: 10px;
+p{
+  width: 145px;
+}
 }
 
  //post
@@ -68,9 +71,6 @@ margin: 10px;
   padding: 20px 0px 50px 0px;
 }
 
-label {
-display: none;
-}
 
 
 // Desktop
