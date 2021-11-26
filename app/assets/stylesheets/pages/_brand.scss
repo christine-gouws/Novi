@@ -38,6 +38,7 @@
   margin-top: 2em;
 }
 
+
 .p-card{
 background-size: cover;
 background-position: center;
@@ -49,6 +50,9 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 margin: 10px;
+p{
+  width: 145px;
+}
 opacity: 100%;
 }
 .p-card:hover {

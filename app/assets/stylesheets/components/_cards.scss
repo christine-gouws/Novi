@@ -1,7 +1,10 @@
 // Desktop
 @media only screen and (min-device-width: 1024px) {
 .brand-card{
-  background-color: $light;
+  // background-size: cover;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 200px;
   width: 200px;
   margin: 1rem;
@@ -98,21 +101,44 @@ body::-webkit-scrollbar {
   display: none;
 }
 .brand-card{
-  background-color: $dark;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 120px;
-  width: 120px;
+  width: 95vw;
   margin: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   a{
-    width: 120px;
+    width: 180px;
     text-align: center;
+  }
+  .info{
+    flex-grow: 1;
+    padding: 1em;
+  }
+
+  h2{
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    color: $dark;
+  }
+
+  p{
+    color: grey;
+  }
+  .brand__img{
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
   }
 }
 
+body {
+  background-color: $off-white;
+}
 
 .brands-container-mobile{
   height: fit-content;
@@ -121,8 +147,10 @@ body::-webkit-scrollbar {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  background-color: $off-white;
   padding: 0 6vw;
   margin: 0 auto;
+  padding-bottom: 7vh;
 
 }
 .brands-container-full{

@@ -9,6 +9,9 @@ class PagesController < ApplicationController
     @brands = Brand.all
     @users = User.all
     @top12 = Following.where(user: current_user, followable_type: "Brand")
+    count = Brand.count
+    random_offset = rand(count)
+    @brand = Brand.offset(random_offset).first
   end
 
   def profile

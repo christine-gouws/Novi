@@ -16,6 +16,7 @@ body{
   display: none;
 }
 
+
 #first{
   position: absolute;
   top:0px;
@@ -74,7 +75,7 @@ body{
 }
 
 .latest {
-  height: 100vh;
+  height: 92vh;
   width: 100%;
   background-color: #180f0c;
   h2 {
@@ -87,7 +88,7 @@ body{
 
 .search-nav {
   background-color: $off-white;
-  padding: 2rem;
+  padding: 2rem 33.5vw;
   height: 10vh;
   display: flex;
   flex-direction: column;
@@ -146,7 +147,6 @@ body{
 @media only screen and (max-device-width: 480px) {
 body{
   height: fit-content;
-
 }
 
 .feed-page{
@@ -157,30 +157,13 @@ body{
 .latest {
   position: relative;
   top: -7vh;
-  height: 80vh;
+  height: 90vh;
   width: 100vw;
   background-color: $off-white;
   h2 {
     font-size: 2rem;
     color: $dark;
     padding: 0.5rem 2rem;
-  }
-}
-
-
-.search-nav {
-  display: none;
-  background-color: $off-white;
-  height: 10vh  ;
-  h2{
-    margin: 1rem;
-    padding-top: 1rem;
-  }
-}
-
-.search {
-  &__input {
-    display: none;
   }
 }
 
@@ -195,13 +178,15 @@ body{
   width: 100vw;
   height: 30vh;
   background-color: $light;
-  margin: 15px auto;
   position: relative;
 }
 
 
 #first-m{
-  background-image:url('https://images.pexels.com/photos/4210866/pexels-photo-4210866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+  background-size: 50%;
+  background-color: white;
+  background-repeat: no-repeat;
   width: 70%;
   height: 90%;
   object-fit: cover;
@@ -213,13 +198,12 @@ body{
 }
 
 .products-first{
-  margin-top: 60px;
-  height: 200px;
+  margin-top: 80px;
+  height: 230px;
   width: 100vw;
   background-color: $off-white;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-
 }
 }
