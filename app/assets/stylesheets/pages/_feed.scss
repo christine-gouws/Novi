@@ -167,9 +167,6 @@ body{
   }
 }
 
-
-
-
 .top-title {
   display: block;
   padding-left: 1rem;
@@ -186,7 +183,10 @@ body{
 
 
 #first-m{
-  background-image:url('https://images.pexels.com/photos/4210866/pexels-photo-4210866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+  background-size: 50%;
+  background-color: white;
+  background-repeat: no-repeat;
   width: 70%;
   height: 90%;
   object-fit: cover;

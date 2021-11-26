@@ -1,7 +1,10 @@
 // Desktop
 @media only screen and (min-device-width: 1024px) {
 .brand-card{
-  background-color: $light;
+  // background-size: cover;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 200px;
   width: 200px;
   margin: 1rem;
@@ -98,7 +101,8 @@ body::-webkit-scrollbar {
   display: none;
 }
 .brand-card{
-  background-color: $light;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 120px;
   width: 95vw;
   margin: 1rem;
@@ -127,6 +131,7 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
   .brand__img{
     width: 120px;
+    height: 120px;
     border-radius: 5px;
   }
 }
