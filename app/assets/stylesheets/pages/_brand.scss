@@ -38,7 +38,6 @@
   margin-top: 2em;
 }
 
-
 .p-card{
 background-size: cover;
 background-position: center;
@@ -59,20 +58,9 @@ opacity: 100%;
 opacity: 50%;
 }
 
-.p-title {
-  margin-top: 1em;
-}
 
- //post
-.posts{
-  width: 100%;
-  max-width: 500px;
-  padding: 0rem 1rem;
-  background-color: white;
-  h3{
-    margin-top: -2em;
-  }
-}
+ //brand
+
 .brand-items {
   display: flex;
   justify-content: space-between;
@@ -82,9 +70,9 @@ opacity: 50%;
   padding: 20px 0px 50px 0px;
 }
 
-// label {
-// display: none;
-// }
+label.select.optional {
+  display: none;
+}
 
 
 // Desktop
@@ -104,18 +92,17 @@ opacity: 50%;
     max-width: 600px;
     padding-left: 8em;
   }
-  .posts {
-    max-width: 600px;
-    margin-left: -10px;
-    padding-bottom: 3em;
-    padding-left: 0;
-  }
+
   .b-image{
-    position: absolute;
-    height: 20px;
-    width: 100%;
-    bottom: 107em;
-    right: -44em;
+   position: absolute;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 26em;
+    width: 26em;
+    bottom: 87em;
+    right: -17em;
+    border: grey solid 1px;
     }
 }
 // Tablet
@@ -125,11 +112,7 @@ opacity: 50%;
  }
   .b-image{
     position: absolute;
-    bottom: 20em;
-    right: 2em;
-    img {
-      width: 250px;
-     }
+    right: -9em;
   }
     .brand-container{
     max-width: 400px;
@@ -148,14 +131,18 @@ opacity: 50%;
     background-color: white;
   }
   .b-image{
-    display: none;
+    position: absolute;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 7em;
+    width: 16em;
+    bottom: 130em;
+    right: 7em;
   }
   .p-card{
     height: 136px;
     width: 122px;
-
-  }
-  .posts {
-    margin: -8.5px;
+    margin:1em,
   }
 }
