@@ -1,19 +1,19 @@
 <div data-controller="brands-filter">
 <div class="feed-page">
   <div class="latest">
-    <h2>latest</h2>
+    <h2 class="d-block d-sm-none"><%=@brand.brand_name%></h2>
+    <h2 class="d-none d-sm-block">LATEST</h2>
     <div class="mobile-pics">
-      <div id="first-m"></div>
-      <div id="second-m"></div>
-      <div id="third-m"></div>
-      <div id="fourth-m"></div>
+      <a href="<%= brand_path(@brand) %>" id="first-m" style="background-image:url('<%= @brand.brand_image %>')"></a>
     </div>
     <div class="products-first">
-      <% @top12.each do |brand| %>
-      <div class="brand-card">
-        <%= link_to brand.followable.brand_name, brand_path(brand.followable) %>
-      </div>
-    <% end %>
+
+        <% @brand.products.each do|product|%>
+          <div class="p-card" style="background-image: url(<%=product.image_url%>)">
+            <p><% product.brand.brand_name %></p>
+          </div>
+        <% end %>
+
     </div>
 
 
@@ -29,7 +29,7 @@
 
 
 <div data-controller="search-brands">
-    <div class="search-nav" data-brands-filter-target="content">
+    <div class="search-nav d-none d-sm-block" data-brands-filter-target="content">
         <%= form_with url: brands_path, method: :get, html: { class:
         'mb-4', data: { search_brands_target: 'form' } } do |f| %>
         <%= f.text_field :query,
@@ -43,18 +43,21 @@
 
   <div class='brands-container-full'data-search-brands-target='list'>
       <% @brands.each do |brand| %>
-        <div class="brand-card">
-          <%= link_to brand.brand_name, brand_path(brand) %>
-        </div>
+        <a href="<%=brand_path(brand) %>"class="brand-card" style="background-image:url('<%= image_url brand.brand_image %>')">
+        </a>
       <% end %>
     </div>
 
-  <h2 class="top-title">your top</h2>
+  <h2 class="top-title">Followed</h2>
    <div class='brands-container-mobile'>
     <% @top12.each do |brand| %>
-      <div class="brand-card">
-        <%= link_to brand.followable.brand_name, brand_path(brand.followable) %>
-      </div>
+      <a href="<%=brand_path(brand.followable)%>" class="brand-card">
+        <%= image_tag brand.followable.brand_image, class: "brand__img"  %>
+        <div class="info">
+          <h2><%= brand.followable.brand_name %></h2>
+          <p><%= brand.followable.description.first(26) %></p>
+        </div>
+      </a>
     <%end %>
   </div>
 </div>
