@@ -42,7 +42,7 @@
 background-size: cover;
 background-position: center;
 height: 150px;
-width: 145px;
+width: 160px;
 border-radius: 10px;
 display: flex;
 flex-direction: column;
@@ -52,7 +52,7 @@ margin: 10px;
 opacity: 100%;
 }
 .p-card:hover {
-opacity: 0%;
+opacity: 50%;
 }
 
 .p-title {
@@ -110,8 +110,8 @@ opacity: 0%;
     position: absolute;
     height: 20px;
     width: 100%;
-    bottom: 72em;
-    right: -16em;
+    bottom: 107em;
+    right: -44em;
     }
 }
 // Tablet
@@ -145,6 +145,11 @@ opacity: 0%;
   }
   .b-image{
     display: none;
+  }
+  .p-card{
+    height: 136px;
+    width: 122px;
+
   }
   .posts {
     margin: -8.5px;
