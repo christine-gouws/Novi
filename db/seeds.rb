@@ -14,11 +14,12 @@ def scrape_zal(brand)
   p url
   response = URI.parse(url).open.read
   html_doc = Nokogiri::HTML(response)
-  html_doc.search('.v2-listing-card').first(10).each do |element|
+  html_doc.search('.v2-listing-card').first(12).each do |element|
     zal_image = element.search('.wt-width-full').attr('src').text.strip
+    zal_url = element.search('.listing-link').attr('href').text.strip
     zal_name = element.search('.v2-listing-card__title').text.strip
     zal_price = element.search('.currency-value').text.strip
-    product = Product.create(product_name: zal_name, product_price: zal_price, brand: brand, image_url: zal_image)
+    product = Product.create(product_name: zal_name, product_price: zal_price, brand: brand, image_url: zal_image, site_url: zal_url )
     p product
   end
 end
@@ -44,9 +45,17 @@ file = File.open((Rails.root.join('app', 'assets', 'images', 'layla.jpg')))
 layla.photo.attach(io: file, filename: 'layla.jpg', content_type: 'image/jpg')
 p layla
 users = [tina, layla, hans]
-50.times do
+
+# BrandScraper
+burl = "https://yougov.co.uk/ratings/consumer/popularity/fashion-clothing-brands/all"
+response = URI.parse(burl).open.read
+html_doc = Nokogiri::HTML(response)
+html_doc.search('.ng-star-inserted').each do |element|
+  image = element.search('img')
+  next unless image.attr('alt')
   brand = Brand.new(
-    brand_name: Faker::Commerce.brand,
+    brand_image: image.attr('src').value,
+    brand_name: image.attr('alt').value,
     description: Faker::Company.type,
     origin: Faker::Address.country,
     carbon_footprint: Faker::Commerce.price,
@@ -54,7 +63,9 @@ users = [tina, layla, hans]
     material_resources: Faker::Address.country,
     user: users.sample
   )
-  brand.save!
-  scrape_zal(brand)
-  p brand.brand_name
+  if !Brand.find_by(brand_name: image.attr('alt').value)
+    brand.save!
+    scrape_zal(brand)
+  end
+    p brand
 end

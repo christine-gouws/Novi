@@ -5,6 +5,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
+  top: -8vh;
 }
 
 .brand-container {
@@ -44,9 +45,18 @@ height: 150px;
 width: 145px;
 border-radius: 10px;
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 margin: 10px;
+opacity: 100%;
+}
+.p-card:hover {
+opacity: 0%;
+}
+
+.p-title {
+  margin-top: 1em;
 }
 
  //post
@@ -68,18 +78,23 @@ margin: 10px;
   padding: 20px 0px 50px 0px;
 }
 
-label {
-display: none;
-}
+// label {
+// display: none;
+// }
 
 
 // Desktop
 @media(min-width: 1024px) {
+  .outgoing {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4em;
+    width: 600px;
+  }
   .b-container {
     margin-left: -20px;
     max-width: 800px;
     background-color: white;
-
   }
   .brand-container{
     max-width: 600px;
@@ -87,13 +102,16 @@ display: none;
   }
   .posts {
     max-width: 600px;
-    padding-left: 7em;
+    margin-left: -10px;
     padding-bottom: 3em;
+    padding-left: 0;
   }
   .b-image{
     position: absolute;
-    bottom: 10em;
-    right: 25em;
+    height: 20px;
+    width: 100%;
+    bottom: 72em;
+    right: -16em;
     }
 }
 // Tablet
@@ -127,5 +145,8 @@ display: none;
   }
   .b-image{
     display: none;
+  }
+  .posts {
+    margin: -8.5px;
   }
 }

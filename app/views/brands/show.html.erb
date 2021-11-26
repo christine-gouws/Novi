@@ -35,19 +35,19 @@
       </div>
 
 
+      <h1 class="p-title"> Products </h1>
       <div class="outgoing">
-        <h1> Products </h1>
         <% @brand.products.each do|product|%>
-          <div class="p-card" style="background-image: url(<%=product.image_url%>)">
-            <p><% product.product_name %></p>
-            <p><% product.product_price %></p>
+          <div>
+            <a href="<%=product.site_url%>"> <img class="p-card" src ="<%=product.image_url%>"/> </a>
+            <p>€<%= product.product_price %></p>
           </div>
         <% end %>
       </div>
   <div class="posts">
 
+    <h1 class="p-title">Thread</h3>
     <div class="posts bg-white p-3">
-    <h3>Thread</h3>
       <%= simple_form_for @new_post do |f| %>
         <%= f.input :comment %>
         <%= f.submit "Create Post" %>
@@ -93,5 +93,5 @@
 
 
 <div class="b-image">
-  <%= image_tag "clothes.png", width: 400 %>
+  <%= image_tag @brand.brand_image, width: 400 %>
 </div>
