@@ -4,7 +4,13 @@
       <h1><%= @current_user.first_name.capitalize %></h1>
 
     </div>
+      <%= simple_form_for @user do |f| %>
+          <%= f.input :first_name %>
+          <%= f.input :description %>
+      <% end %>
       <div class="b-info">
+
+
         <h5 class="b-description"><strong>Description</strong><br> <%= @current_user.description %></h5>
         <%= image_tag @current_user.photo, class: "avatar-huge d-none d-sm-block" %>
         <%= image_tag @current_user.photo, class: "avatar d-block d-sm-none" %>
@@ -66,5 +72,4 @@
 
     </div>
   </div>
-  <%= link_to "edit profile", edit_user_path(@current_user) %>
 </div>

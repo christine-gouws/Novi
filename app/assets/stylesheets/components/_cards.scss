@@ -17,6 +17,22 @@
   object-fit: cover;
 }
 
+.user-card{
+  // background-size: cover;
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100px;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
 
 .brands-container-full{
   height: 85vh;
@@ -114,7 +130,7 @@ body::-webkit-scrollbar {
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   a{
     width: 180px;
     text-align: center;
@@ -138,6 +154,22 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     height: 120px;
     border-radius: 5px;
   }
+}
+
+.user-card{
+  // background-size: cover;
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100px;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 body {

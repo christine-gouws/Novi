@@ -1,2 +1,50 @@
-<h1><%= @user.first_name %></h1>
-<p>REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</p>
+<div class="b-container">
+  <div class="brand-container">
+    <div class="brand-items">
+      <h1><%= @user.first_name.capitalize %></h1>
+      <% unless @user == current_user %>
+      <div class="follow">
+        <% if @following.present? %>
+          <%= link_to "UNFOLLOW", following_path(@following),class: "button-form", method: :delete %>
+        <% else %>
+          <%= simple_form_for @new_following do |f| %>
+            <%= f.submit "Follow", class: "button-form"  %>
+            <%= f.input :followable_type,input_html:{value: "User"} , as: :hidden %>
+            <%= f.input :followable_id, input_html: {value: @user.id} , as: :hidden %>
+          <% end %>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+      <div class="b-info">
+        <h5 class="b-description"><strong>Description</strong><br> <%= @user.description %></h5>
+        <%= image_tag @user.photo, class: "avatar-huge" %>
+        <table class="b-table">
+        <tr><td>Full name</td><td class="table-content"><%= @user.first_name.capitalize%> <br><%= @user.last_name.capitalize%></td></tr>
+        <tr><td>Email</td><td class="table-content"><%= @user.email%></td></tr>
+        </table>
+      </div>
+        <div class="activity">
+      FOLLOWING:
+      <h5 style="border-bottom: 2px solid black; width:100px;">Brands</h5>
+      <div class="f-brands">
+        <% @user.followings.each do |following| %>
+          <% if following.followable_type == "Brand" %>
+            <a href="<%=brand_path(following.followable) %>"class="brand-card" style="background-image:url('<%= image_url following.followable.brand_image %>')">
+            </a>
+          <% end %>
+        <% end %>
+      </div>
+        <h5 style="border-bottom: 2px solid black; width:100px;">Users</h5>
+      <div class="f-users">
+        <% @user.followings.each do |following| %>
+          <% if following.followable_type == "User" %>
+            <a href="<%=user_path(following.followable) %>"class="user-card" style="background-image:url('<%= cl_image_path(following.followable.photo.key)%>')">
+            </a>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+   <%= link_to "Back", feed_path , class: "button-form"%>
+  </div>
+</div>

@@ -33,10 +33,12 @@ class PagesController < ApplicationController
   end
 
   def about
-
   end
 
-   private
+  def registration
+  end
+
+  private
 
   def following?
     # @brand = Brand.find(params[:id])

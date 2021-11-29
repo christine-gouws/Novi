@@ -3,13 +3,21 @@ class FollowingsController < ApplicationController
     @following = Following.new(following_params)
     @following.user = current_user
     @following.save!
-    redirect_to brand_path(@following.followable_id)
+    if @following.followable_type == "Brand"
+      redirect_to brand_path(@following.followable_id)
+    else
+      redirect_to user_path(@following.followable_id)
+    end
   end
 
   def destroy
     following = Following.find(params[:id])
     following.destroy
-    redirect_to brand_path(following.followable_id)
+    if following.followable_type == "Brand"
+      redirect_to brand_path(following.followable_id)
+    else
+      redirect_to user_path(following.followable_id)
+    end
   end
 
   private
