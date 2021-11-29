@@ -1,18 +1,18 @@
 <div class="container">
-  <div class="brand-container">
-    <div class="brand-items">
+  <div class="profile-container">
+    <div class="p-items">
       <p>Welcome back</p>
       <h1><%= current_user.first_name.capitalize%></h1>
       <p><%= current_user.followings.length%></p>
       
     </div>
       
-      <div class="b-info">
-        <h5 class="b-description"><strong>Description</strong><br> <%= current_user.description %></h5>
-          <div class="b-item">
+      <div class="p-info">
+        <h5 class="p-description"><strong>Description</strong><br> <%= current_user.description %></h5>
+          <div class="p-item">
             <h5>Recent Activity</h5>
           </div>
-          <div class="b-item">
+          <div class="p-item">
             <h5>Likes</h5>
               <% current_user.likes.each do |like| %>
               <%= like.post.comment %>

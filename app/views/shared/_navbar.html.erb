@@ -4,26 +4,30 @@
 
     <h3 class="novi-title">NOVI</h3>
   </a>
+  <div class="d-flex align-items-center">
+    <a href="<%= about_path%>" class="d-none d-sm-block about mr-5">About us</a>
+    <a href="<%= feed_path%>" class="d-none d-sm-block about mr-5">your feed</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <i class="fas fa-camera cam"></i>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <i class="fas fa-camera cam"></i>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-
-      </li>
-      <li class="dropdown">
-      <% if user_signed_in? && current_user.photo %>
-        <%= cl_image_tag current_user.photo.key, height: 50, width: 50, class: "avatar-large" %>
-      <% else %>
-        <a class="btn btn-ghost" href="#">Account</a>
-      <% end %>
-      <ul class="dropdown-content">
+        </li>
+        <li class="dropdown">
         <% if user_signed_in? %>
-          <%= link_to 'Profile', profile_path, class:'btn border bg-light m-2' %>
-          <%= link_to 'Log out', destroy_user_session_path, class:'btn border bg-light m-2', method: :delete %>
+          <%= cl_image_tag current_user.photo.key, height: 50, width: 50, class: "avatar-large" %>
+        <% else %>
+          <a class="btn btn-ghost" href="#">Account</a>
         <% end %>
+        <ul class="dropdown-content">
+          <% if user_signed_in? %>
+            <%= link_to 'Profile', profile_path %>
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+          <% end %>
+        </ul>
+      </li>
       </ul>
-    </li>
-  </ul>
+    </div>
   </div>
+
 </div>
