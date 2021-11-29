@@ -16,8 +16,6 @@
       </div>
     </div>
 
-
-
       <div class="rating" data-controller="stars">
         <% if @rating.id.nil? %>
           <%= simple_form_for(@rating, html:{ class:"review_form" }) do |f| %>
@@ -35,7 +33,6 @@
         <% end %>
       </div>
 
-
       <div class="b-info">
         <h5 class="b-description"><strong>Description</strong><br> <%= @brand.description %></h5>
         <table class="b-table">
@@ -47,7 +44,6 @@
         </table>
       </div>
 
-
       <h1 class="p-title"> Products </h1>
       <div class="outgoing">
         <% @brand.products.each do|product|%>
@@ -57,50 +53,51 @@
         <% end %>
       </div>
 
+    <%= link_to "return", feed_path,  class: "button-form btn-home " %>
+  </div>
 </div>
 
+
   <div class="posts">
-    <h1 class="p-title">Thread</h3>
     <div class="posts bg-white p-3">
-      <%= simple_form_for @new_post do |f| %>
-        <%= f.input :comment %>
-        <%= f.submit "Create Post" %>
-        <%= f.input :messageable_type, input_html:{value: "Brand"} , as: :hidden %>
-        <%= f.input :messageable_id, input_html:{value: @brand.id} , as: :hidden %>
-        <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
-      <% end %>
-      <% @posts.each do |post| %>
-        <% if post.messageable_id == @brand.id %>
+      <h1 class="p-title">Thread</h3>
+        <%= simple_form_for @new_post do |f| %>
+          <%= f.input :comment, placeholder: "Add a new thread, then press enter." %>
+          <%= f.submit "⏎", class: "d-none" %>
+          <%= f.input :messageable_type, input_html:{value: "Brand"} , as: :hidden %>
+          <%= f.input :messageable_id, input_html:{value: @brand.id} , as: :hidden %>
+          <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
+        <% end %>
+        <% @posts.each do |post| %>
+         <% if post.messageable_id == @brand.id %>
           <div class="post p-2">
-          <div>
-            <h3><%= post.comment %></h3>
-            <p><%= post.user.email %></p>
-            <%= post.likes.count %>
-          </div>
-          <div>
-            <%= simple_form_for @like do |f| %>
-              <%= f.submit "👍" %>
-              <%= f.input :post_id, input_html: {value: post.id} , as: :hidden %>
-            <% end %>
-          </div>
-          <div>
-            <%= link_to '🗑', post_path(post, params:{ brand_id: @brand.id }), method: :delete %>
-            <%= simple_form_for @new_post do |f| %>
-              <%= f.input :comment %>
-              <%= f.submit 'Comment'%>,
-              <%= f.input :messageable_type, input_html:{value: "Post"} , as: :hidden %>
-              <%= f.input :messageable_id, input_html:{value: post.id} , as: :hidden %>
-              <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
-          <% end %>
-          </div>
-          <%= render "posts/posts", post: post %>
+
+              <h5>"<%= post.comment %>"</h5>
+
+              <div id = "post-actions">
+                    <p class = "post-user"> Posted by <%= post.user.email %></p>
+                    <p> <%= post.likes.count %> likes </p>
+                    <%= simple_form_for @like do |f| %>
+                      <%= f.submit "👍" %>
+                      <%= f.input :post_id, input_html: {value: post.id} , as: :hidden %>
+                    <% end %>
+                    <%= link_to '🗑', post_path(post, params:{ brand_id: @brand.id }), method: :delete %>
+              </div>
+            <div>
+                <%= simple_form_for @new_post do |f| %>
+                  <%= f.input :comment %>
+                  <%= f.submit 'Comment' %>
+                  <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
+                  <%= f.input :messageable_id, input_html:{value: post.id} , as: :hidden %>
+                  <%= f.input :messageable_type, input_html:{value: "Post"} , as: :hidden %>
+                <% end %>
+            </div>
+            <%= render "posts/posts", post: post %>
           </div>
         <% end %>
       <% end %>
     </div>
-   <%= link_to "Back", feed_path %>
   </div>
-
 
 <div>
   <a href="<%=brand_path(@brand) %> "class="b-image" style="background-image:url('<%= image_url @brand.brand_image %>')">

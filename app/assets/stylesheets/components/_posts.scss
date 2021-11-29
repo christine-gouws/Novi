@@ -1,7 +1,55 @@
 
+label.text.optional {
+  display: none;
+}
+
+#post-actions{
+  display: flex;
+  gap: 3em;
+  p.post-user{
+    color: darkgrey;
+    font-size: 12px;
+  }
+  p {
+     font-size: 10px;
+  }
+}
+
+.p-title {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+#post-reponse {
+  margin-left: 10px;
+}
+.sub_post {
+  display: flex;
+  gap: 3em;
+  margin-left: 8%;
+  h3 {
+    font-size: 14px;
+  }
+  p {
+    color: darkgrey;
+    font-size: 10px;
+  }
+}
+.post {
+  box-shadow:  rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-left: 8%;
+  margin-bottom: 2em;
+}
 
 // Desktop
 @media(min-width: 1024px) {
+  textarea.form-control {
+  max-width: 44em;
+  }
+  .posts {
+   max-width: 800px;
+   margin-bottom: 2em;
+  }
 }
 
 // Tablet
@@ -10,4 +58,16 @@
 
 // Mobile
 @media(max-width: 480px) {
+
+  textarea.form-control {
+  max-width: 20em
+}
+ .posts {
+   max-width: 800px;
+   margin-bottom: 2em;
+  }
+#post-actions{
+  display: flex;
+  gap: 1em;
+}
 }

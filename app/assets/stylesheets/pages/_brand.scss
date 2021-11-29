@@ -32,10 +32,6 @@
 
 //products
 
- .p-title {
-    margin-top: 1em;
-  }
-
 .outgoing {
   display:flex;
   flex-wrap: wrap;
@@ -96,10 +92,6 @@ label.select.optional {
     padding-left: 8em;
   }
 
-  .p-title {
-    margin-top: 1em;
-  }
-
   .b-image{
    position: absolute;
     background-color: white;
@@ -107,9 +99,10 @@ label.select.optional {
     background-position: center;
     height: 26em;
     width: 26em;
-    bottom: 60em;
-    right: -20em;
+    top: 11em;
+    left: 45em;
     box-shadow:  rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
     }
 }
 // Tablet
