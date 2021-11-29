@@ -1,35 +1,6 @@
 <div data-controller="brands-filter">
 <div class="feed-page">
 
-<!--
-  <div class="latest">
-    <h2 class="d-block d-sm-none"><%=@brand.brand_name%></h2>
-    <h2 class="d-none d-sm-block">LATEST</h2>
-    <div class="mobile-pics">
-      <a href="<%= brand_path(@brand) %>" id="first-m" style="background-image:url('<%= @brand.brand_image %>')"></a>
-    </div>
-    <div class="products-first">
-
-        <% @brand.products.each do|product|%>
-          <div class="p-card" style="background-image: url(<%=product.image_url%>)">
-            <p><% product.brand.brand_name %></p>
-          </div>
-        <% end %>
-
-    </div>
-
-
-    <div class='img-container'>
-      <div id="first"></div>
-      <div id="second"></div>
-      <div id="third"></div>
-      <div id="fourth"></div>
-    </div>
-
-
-  </div>
--->
-
 <div data-controller="search-brands">
   <div class="banner-search">
     <h2 class="qoute"><%= @qoute %></h2>
