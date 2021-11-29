@@ -1,28 +1,29 @@
-
-<div data-controller="search-brands">
-    <div class="search-nav" data-brands-filter-target="content">
-        <%= form_with url: brands_path, method: :get, html: { class:
-        'mb-4', data: { search_brands_target: 'form' } } do |f| %>
-        <%= f.text_field :query,
-                     class: "form-control",
-                     placeholder: 'Type a brand name',
-                     value: params[:query],
-                     data: { search_brands_target: 'input', action: 'keyup->search-brands#update'} %>
-                     <% end %>
-    </div>
-
-
-  <div class='brands-container-mobile'data-search-brands-target='list'>
-      <% @brands.each do |brand| %>
-        <div class="brand-card">
-         <%= image_tag "clothes.png", class: "brand__img"  %>
-          <div class="info">
-            <h2><%= brand.brand_name %></h2>
-            <p><%= brand.description.first(26) %></p>
-         </div>
-        </div>
-      <% end %>
-    </div>
+<div class="search-page">
+  <div data-controller="search-brands">
+      <div class="search-nav" data-brands-filter-target="content">
+          <%= form_with url: brands_path, method: :get, html: { class:
+          'mb-4', data: { search_brands_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                      class: "form-control",
+                      placeholder: 'Type a brand name',
+                      value: params[:query],
+                      data: { search_brands_target: 'input', action: 'keyup->search-brands#update'} %>
+                      <% end %>
+      </div>
 
 
+    <div class='brands-container-mobile'data-search-brands-target='list'>
+        <% @brands.each do |brand| %>
+          <a href="<%= brand_path(brand) %> "class="brand-card">
+            <%= image_tag brand.brand_image, class: "brand__img"  %>
+              <div class="info">
+                <h2><%= brand.brand_name %></h2>
+                <p><%= brand.description.first(26) %></p>
+            </div>
+          </a>
+        <% end %>
+      </div>
+
+
+  </div>
 </div>
