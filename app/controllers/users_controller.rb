@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.update(persona_edit_params)
+    redirect_to profile_path
   end
 
   private
