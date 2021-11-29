@@ -1,7 +1,117 @@
-.container {
-  background-color: white;
-}
+
+@media(min-width: 1024px){
 
 p {
   margin: 0;
+}
+
+.activity {
+  margin: 100px 0;
+  width: 93vw;
+  background-color: white;
+}
+.p-container {
+  background-color: white;
+}
+
+.profile-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.75rem;
+  background-color: white;
+  margin-left: 5rem;
+  padding-top: 5rem;
+}
+
+.body{
+  background-color: white;
+}
+
+.f-brands{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.f-users{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.f-user {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  a{
+    color: white;
+  }
+ }
+
+ .like{
+   width: fit-content;
+   min-width: 300px;
+   margin: 10px;
+   padding: 10px 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+ }
+}
+
+
+@media(max-width: 480px){
+
+p {
+  margin: 0;
+}
+
+.activity {
+  margin: 100px 0;
+  width: 93vw;
+  background-color: white;
+}
+.p-container {
+  background-color: white;
+}
+
+.profile-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.75rem;
+  background-color: white;
+}
+
+.body{
+  background-color: white;
+}
+
+.f-brands{
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.f-users{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.f-user {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  a{
+    color: white;
+  }
+ }
+
+ .like{
+   width: fit-content;
+   min-width: 300px;
+   margin: 10px;
+   padding: 10px 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+ }
 }
