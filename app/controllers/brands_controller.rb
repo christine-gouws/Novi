@@ -16,10 +16,9 @@ class BrandsController < ApplicationController
     @posts = Post.all
     @brand = Brand.find(params[:id])
     following?
-    p @following
     @new_post = Post.new
     @new_following = Following.new
-    @rating = Rating.new
+    @rating = current_user.ratings.find_by(brand: @brand) || Rating.new
     @avg_rating = avg_rating
     @like = Like.new
   end

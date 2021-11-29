@@ -15,14 +15,27 @@
         <% end %>
       </div>
     </div>
-      <%= @avg_rating %> stars
-      <div class="rating">
-        <%= simple_form_for(@rating, html:{ class:"review_form" }) do |f| %>
-          <%= f.input :rating, collection: 1..10, class:"d-none"  %>
-          <%= f.submit 'submit',class:"d-none" %>
-          <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
+
+
+
+      <div class="rating" data-controller="stars">
+        <% if @rating.id.nil? %>
+          <%= simple_form_for(@rating, html:{ class:"review_form" }) do |f| %>
+            <%= f.input :rating, collection: 1..10, class:"d-none", data: {'stars-target' => 'stars'} %>
+            <%= f.submit 'submit',class:"d-none" %>
+            <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
+          <% end %>
+        <% else %>
+          <% @avg_rating.times do |star|  %>
+            <i class="fas fa-star" style="color: #EDB867;"> </i>
+          <% end %>
+          <% (10 - @avg_rating).times do |star|  %>
+            <i class="far fa-star" style="color: #d2d2d2;"> </i>
+          <% end %>
         <% end %>
       </div>
+
+
       <div class="b-info">
         <h5 class="b-description"><strong>Description</strong><br> <%= @brand.description %></h5>
         <table class="b-table">
@@ -40,12 +53,13 @@
         <% @brand.products.each do|product|%>
           <div>
             <a href="<%=product.site_url%>"> <img class="p-card" src ="<%=product.image_url%>"/> </a>
-            <p>€<%= product.product_price %></p>
           </div>
         <% end %>
       </div>
-  <div class="posts">
 
+</div>
+
+  <div class="posts">
     <h1 class="p-title">Thread</h3>
     <div class="posts bg-white p-3">
       <%= simple_form_for @new_post do |f| %>
@@ -54,9 +68,7 @@
         <%= f.input :messageable_type, input_html:{value: "Brand"} , as: :hidden %>
         <%= f.input :messageable_id, input_html:{value: @brand.id} , as: :hidden %>
         <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
-
       <% end %>
-
       <% @posts.each do |post| %>
         <% if post.messageable_id == @brand.id %>
           <div class="post p-2">
@@ -88,8 +100,6 @@
     </div>
    <%= link_to "Back", feed_path %>
   </div>
-</div>
-
 
 
 <div>
