@@ -1,5 +1,15 @@
- <% brands.each do |brand| %>
-        <div class="brand-card">
-          <%= link_to brand.brand_name, brand_path(brand) %>
-        </div>
-      <% end %>
+
+  <% @brands.each do |brand| %>
+    <a href="<%=brand_path(brand) %>"class="brand-card d-none d-sm-block" style="background-image:url('<%= image_url brand.brand_image %>')">
+    </a>
+  <% end %>
+
+  <% @brands.each do |brand| %>
+    <a href="<%= brand_path(brand) %> "class="brand-card d-flex d-sm-none">
+      <%= image_tag brand.brand_image, class: "brand__img"  %>
+      <div class="info">
+        <h2><%= brand.brand_name %></h2>
+        <p><%= brand.description.first(26) %></p>
+      </div>
+    </a>
+  <% end %>

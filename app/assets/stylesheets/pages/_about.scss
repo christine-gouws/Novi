@@ -1,0 +1,48 @@
+body{
+  background-color: $off-white;
+}
+
+.about-page{
+
+  margin: 0 auto;
+}
+
+hr{
+  margin: 0;
+}
+
+.us {
+  padding: 10vh;
+  margin: 10vh 30vh;
+  border-left: 1px solid grey;
+  h2{
+    padding-bottom: 2rem;
+  }
+}
+.why-container{
+  background-color: rgb(224, 224, 224);
+  padding: 10vh 0;
+}
+
+
+.why{
+  text-align: right;
+  padding: 10vh;
+  margin: 0 30vh;
+  border-right: 1px solid $off-white;
+  h2{
+    padding-bottom: 2rem;
+  }
+}
+
+
+
+.how{
+  padding: 10vh;
+  margin: 10vh 30vh;
+  border-left: 1px solid grey;
+
+  h2{
+    padding-bottom: 2rem;
+  }
+}

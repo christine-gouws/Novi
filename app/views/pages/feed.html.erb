@@ -1,5 +1,7 @@
 <div data-controller="brands-filter">
 <div class="feed-page">
+
+<!--
   <div class="latest">
     <h2 class="d-block d-sm-none"><%=@brand.brand_name%></h2>
     <h2 class="d-none d-sm-block">LATEST</h2>
@@ -26,9 +28,12 @@
 
 
   </div>
-
+-->
 
 <div data-controller="search-brands">
+  <div class="banner-search">
+    <h2 class="qoute"><%= @qoute %></h2>
+  </div>
     <div class="search-nav d-none d-sm-block" data-brands-filter-target="content">
         <%= form_with url: brands_path, method: :get, html: { class:
         'mb-4', data: { search_brands_target: 'form' } } do |f| %>
