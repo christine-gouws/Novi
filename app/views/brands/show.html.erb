@@ -75,7 +75,7 @@
               <h5>"<%= post.comment %>"</h5>
 
               <div id = "post-actions">
-                    <p class = "post-user"> Posted by <%= link_to post.user.email, profile_path()%> <%=distance_of_time_in_words((Time.now.to_i - post.created_at.to_i))%></p>
+                    <p class = "post-user"> Posted by <%= link_to post.user.email, profile_path(post.user_id)%> <%=distance_of_time_in_words((Time.now.to_i - post.created_at.to_i))%></p>
                     <p> <%= post.likes.count %> likes </p>
                     <%= simple_form_for @like do |f| %>
                       <%= f.submit "👍" %>

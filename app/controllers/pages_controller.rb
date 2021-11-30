@@ -38,6 +38,9 @@ class PagesController < ApplicationController
   def registration
   end
 
+  def thankyou
+  end
+
   private
 
   def following?
