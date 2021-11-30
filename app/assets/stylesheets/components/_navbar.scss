@@ -1,6 +1,10 @@
 // Desktop
 @media only screen and(min-device-width: 1024px) {
 
+#file-input {
+  display: none;
+}
+
 .novi-title{
   font-weight: bolder;
 }
@@ -128,6 +132,10 @@ ul.dropdown-content {
   position: absolute;
   top: 1.5vh;
   left: 87vw;
+}
+
+#file-input {
+  display: none;
 }
 
 .navbar-lewagon {

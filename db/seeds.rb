@@ -106,7 +106,7 @@ brand_4 = Brand.create!(
 
 
 brand_5 = Brand.create!(
-  brand_image: "faithfull.jpg",
+  brand_image: "faithfull.png",
   brand_name: "Faithfull The Brand",
   description: "Hand made by well-supported local artisans.",
   origin: "Bali, Indonesia",
@@ -141,7 +141,7 @@ brand_7 = Brand.create!(
   )
 
 brand_8 = Brand.create!(
-  brand_image: "redone.jpg",
+  brand_image: "redone.png",
   brand_name: "Re/Done",
   description: "Repurposing old Levis",
   origin: "La, California",

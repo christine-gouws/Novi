@@ -5,10 +5,10 @@
       <h1><%= @brand.brand_name %></h1>
       <div class="follow">
         <% if @following.present? %>
-          <%= link_to "UNFOLLOW", following_path(@following), method: :delete %>
+          <%= link_to "UNFOLLOW", following_path(@following),class: "button-form", method: :delete %>
         <% else %>
           <%= simple_form_for @new_following do |f| %>
-            <%= f.submit "Follow" %>
+            <%= f.submit "Follow", class:"button-form" %>
             <%= f.input :followable_type,input_html:{value: "Brand"} , as: :hidden %>
             <%= f.input :followable_id, input_html: {value: @brand.id} , as: :hidden %>
           <% end %>
@@ -58,9 +58,9 @@
 </div>
 
 
-  <div class="posts">
-    <div class="posts bg-white p-3">
-      <h1 class="p-title">Thread</h3>
+  <div class="posts-container">
+    <div class="posts bg-white">
+      <h1 id="thread" class="p-title">Thread</h3>
         <%= simple_form_for @new_post do |f| %>
           <%= f.input :comment, placeholder: "Add a new thread, then press enter." %>
           <%= f.submit "⏎", class: "d-none" %>
@@ -70,29 +70,37 @@
         <% end %>
         <% @posts.each do |post| %>
          <% if post.messageable_id == @brand.id %>
-          <div class="post p-2">
+          <div id="<%= "post-#{post.id}" %>" class="post p-2" data-controller="comments">
+              <a href="<%=profile_path(post.user_id) %>"><%= image_tag post.user.photo, class: "avatar-post"%></a>
+            <div class="post-content">
+                   <p class="post-time"><%= link_to post.user.first_name, profile_path(post.user_id) %> <%=distance_of_time_in_words((Time.now.to_i - post.created_at.to_i))%></p>
 
-              <h5>"<%= post.comment %>"</h5>
+                <h5>"<%= post.comment %>"</h5>
 
-              <div id = "post-actions">
-                    <p class = "post-user"> Posted by <%= link_to post.user.email, profile_path()%> <%=distance_of_time_in_words((Time.now.to_i - post.created_at.to_i))%></p>
-                    <p> <%= post.likes.count %> likes </p>
+
+              <div id = "post-actions" >
+
                     <%= simple_form_for @like do |f| %>
-                      <%= f.submit "👍" %>
+                      <%= post.likes.count %>
+                      <%= f.submit "👍", class: "button-like" %>
                       <%= f.input :post_id, input_html: {value: post.id} , as: :hidden %>
                     <% end %>
-                    <%= link_to '🗑', post_path(post, params:{ brand_id: @brand.id }), method: :delete %>
+                    <div class="links">
+                      <button class="btn-comment" data-comments-target="button" data-action="click->comments#show">add comment</button>
+                      <%= link_to 'delete', post_path(post, params:{ brand_id: @brand.id }),class:"button-like", method: :delete if post.user == current_user %>
+                    </div>
               </div>
-            <div>
-                <%= simple_form_for @new_post do |f| %>
-                  <%= f.input :comment %>
-                  <%= f.submit 'Comment' %>
-                  <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
-                  <%= f.input :messageable_id, input_html:{value: post.id} , as: :hidden %>
-                  <%= f.input :messageable_type, input_html:{value: "Post"} , as: :hidden %>
-                <% end %>
+              <div class="comment d-none" data-comments-target='form'>
+                  <%= simple_form_for @new_post do |f| %>
+                    <%= f.input :comment %>
+                    <%= f.submit 'Comment' %>
+                    <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
+                    <%= f.input :messageable_id, input_html:{value: post.id} , as: :hidden %>
+                    <%= f.input :messageable_type, input_html:{value: "Post"} , as: :hidden %>
+                  <% end %>
+              </div>
+              <%= render "posts/posts", post: post %>
             </div>
-            <%= render "posts/posts", post: post %>
           </div>
         <% end %>
       <% end %>

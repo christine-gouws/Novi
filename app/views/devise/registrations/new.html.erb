@@ -1,7 +1,6 @@
 <div class="home-page">
- <video autoplay muted loop id="myVideo">
-    <source src="<%= asset_path('background.mp4') %>" type="video/mp4">
-  </video>
+ <img id="bg" src="<%= asset_path('background.jpg') %>" alt="">
+
 
 <h1 class = "form-header">NOVI</h1>
 
@@ -33,7 +32,9 @@
         <%= f.button :submit, "Sign up", class: "button-form" %>
       </div>
     <% end %>
+    <%= link_to "Return", root_path, class:'button-form' %>
   </div>
+
     <% render "devise/shared/links" %>
 </div>
 </div>
