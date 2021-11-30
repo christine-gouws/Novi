@@ -7,7 +7,7 @@
           <div class="content">
           <h3><%= sub_post.comment %></h3>
         </div>
-        <%= link_to 'delete', post_path(sub_post, params:{ brand_id: @brand.id }), method: :delete %>
+        <%= link_to 'delete', post_path(sub_post, params:{ brand_id: @brand.id }), method: :delete if sub_post.user == current_user %>
         </div>
 
     </div>
