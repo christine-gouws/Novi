@@ -150,6 +150,8 @@ body::-webkit-scrollbar {
     color: grey;
   }
   .brand__img{
+    object-fit: contain;
+    background-size: cover;
     width: 120px;
     height: 120px;
     border-radius: 5px;

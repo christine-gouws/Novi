@@ -5,7 +5,7 @@
 
     </div>
       <div class="b-info">
-      <%= simple_form_for @user do |f| %>
+      <%= simple_form_for @user, url: profile_path(@user) do |f| %>
         <h5 class="b-description"><strong>Description</strong><%= f.input :description %></h5>
         <%= image_tag @current_user.photo, class: "avatar-huge d-none d-sm-block" %>
         <%= image_tag @current_user.photo, class: "avatar d-block d-sm-none" %>

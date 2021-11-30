@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     following?
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.update(persona_edit_params)
-    redirect_to profile_path
+    redirect_to dashboard_path
   end
 
   private
