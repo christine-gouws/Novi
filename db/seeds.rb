@@ -65,11 +65,11 @@ brand_1 = Brand.create!(
   user: users.sample
   )
 
-
+scrape_zal(brand_1)
 
 brand_2 = Brand.create!(
   brand_image: "sezane.jpg",
-  brand_name: "Sézane",
+  brand_name: "Sezane",
   description: "Sustainable production that benefits people and the planet.",
   origin: "Paris, France",
   carbon_footprint: "The brand started online as a way to cut out the middleman, focusing on zero waste production as much as possible.",
@@ -79,6 +79,7 @@ brand_2 = Brand.create!(
   user: users.sample
   )
 
+scrape_zal(brand_2)
 
 brand_3 = Brand.create!(
   brand_image: "reformation.jpg",
@@ -92,10 +93,11 @@ brand_3 = Brand.create!(
   user: users.sample
   )
 
+scrape_zal(brand_3)
 
 brand_4 = Brand.create!(
   brand_image: "levis.jpg",
-  brand_name: "Levi’s",
+  brand_name: "Levis",
   description: "THE face of denim.",
   origin: "California, USA",
   carbon_footprint: "Sustainable & regenerative fabrics, carbon- & water-neutral.",
@@ -104,6 +106,7 @@ brand_4 = Brand.create!(
   user: users.sample
   )
 
+scrape_zal(brand_4)
 
 brand_5 = Brand.create!(
   brand_image: "faithfull.png",
@@ -118,6 +121,8 @@ brand_5 = Brand.create!(
   user: users.sample
   )
 
+scrape_zal(brand_5)
+
 brand_6 = Brand.create!(
   brand_image: "mardi.jpg",
   brand_name: "Mardi Edition",
@@ -129,6 +134,8 @@ brand_6 = Brand.create!(
   user: users.sample
   )
 
+scrape_zal(brand_6)
+
 brand_7 = Brand.create!(
   brand_image: "people.jpg",
   brand_name: "People Tree",
@@ -139,6 +146,8 @@ brand_7 = Brand.create!(
   material_resources: "Organic & biodegradable materials.",
   user: users.sample
   )
+
+scrape_zal(brand_7)
 
 brand_8 = Brand.create!(
   brand_image: "redone.png",
@@ -152,6 +161,8 @@ brand_8 = Brand.create!(
   zinc-free eyelets, and soles made up of a recycled rubber compound made from production waste.",
   user: users.sample
   )
+
+scrape_zal(brand_8)
 
 brand_9 = Brand.create!(
   brand_image: "alohas.jpg",
@@ -168,6 +179,8 @@ brand_9 = Brand.create!(
   user: users.sample
   )
 
+scrape_zal(brand_9)
+
 brand_10 = Brand.create!(
   brand_image: "veja.jpg",
   brand_name: "Veja",
@@ -180,3 +193,5 @@ brand_10 = Brand.create!(
   rubber grown in the Amazon rainforest for the soles and recycled plastic bottles to create a mesh.'",
   user: users.sample
   )
+
+scrape_zal(brand_10)
