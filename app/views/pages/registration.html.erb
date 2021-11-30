@@ -1,15 +1,39 @@
 
 <div class="r-container">
   <div class="registration-container">
+       <%# <form action="https://formsubmit.co/christine.gouws@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New submission!">
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="contact_name" placeholder="Contact name" required>
+        <input type="text" name="brand_name" placeholder="Brand Name" required>
+        <input type="text" name="origin" placeholder="Origin of Product" required>
+        <input type="text" name="carbon_footprint" placeholder="Carbon Footprint" required>
+        <input type="text" name="company_ethics" placeholder="Company Ethics" required>
+        <input type="text" name="materials_used" placeholder="Materials Used" required>
+        <input type="text" name="name" placeholder="Additional information" required>
+        <input type="hidden" name="_next" value="http://localhost:3000/thankyou">
+        <button type="submit">Send</button>
+      </form> %>
 
 
-  <form action="https://formsubmit.co/christine.gouws@gmail.com" method="POST">
-     <input type="hidden" name="_subject" value="New submission!">
-     <input type="email" name="email" placeholder="Email Address" required>
-     <input type="hidden" name="_next" value="http://localhost:3000/thankyou">
-     <input type="text" name="name" placeholder="write your message here!" required>
-     <button type="submit">Send</button>
- </form>
+    <form action="https://formsubmit.co/christine.gouws@gmail.com" method="POST">
+       <input type="hidden" name="_subject" value="New submission!">
+       <input type="text" name="contact_name" placeholder="Contact name" required>
+       <input type="email" name="email" placeholder="Email Address" required>
+      <div class="b-info">
+        <h5 class="b-description"><br></h5>
+        <table class="b-table">
+        <tr><td>Brand</td><td class="table-content"><input type="text" name="brand_name" placeholder="Brand Name" required></td></tr>
+        <tr><td>Origin</td><td class="table-content"><input type="text" name="origin" placeholder="Origin of Product" required></td></tr>
+        <tr><td>Carbon Footprint</td> <td class="table-content"><input type="text" name="carbon_footprint" placeholder="Carbon Footprint" required> </td></tr>
+        <tr><td>Ethics</td><td class="table-content"><input type="text" name="company_ethics" placeholder="Company Ethics" required></td></tr>
+        <tr><td>Material Resources</td><td class="table-content"> <input type="text" name="materials_used" placeholder="Materials Used" required></td></tr>
+        </table>
+      </div>
+        <input type="text" name="add_information" placeholder="Additional information">
+         <input type="hidden" name="_next" value="http://localhost:3000/thankyou">
+        <button type="submit">Send</button>
+    </form>
 
 
   </div>
