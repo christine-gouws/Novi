@@ -6,7 +6,7 @@ class FollowingsController < ApplicationController
     if @following.followable_type == "Brand"
       redirect_to brand_path(@following.followable_id)
     else
-      redirect_to user_path(@following.followable_id)
+      redirect_to profile_path(@following.followable_id)
     end
   end
 
@@ -16,7 +16,7 @@ class FollowingsController < ApplicationController
     if following.followable_type == "Brand"
       redirect_to brand_path(following.followable_id)
     else
-      redirect_to user_path(following.followable_id)
+      redirect_to profile_path(following.followable_id)
     end
   end
 
