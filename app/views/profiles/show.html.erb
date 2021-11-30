@@ -18,7 +18,7 @@
     </div>
       <div class="b-info">
         <h5 class="b-description"><strong>Description</strong><br> <%= @user.description %></h5>
-        <%= image_tag @user.photo, class: "avatar-huge" %>
+        <%= image_tag @user.photo, class: "avatar-huge" if @user.photo.attached? %>
         <table class="b-table">
         <tr><td>Full name</td><td class="table-content"><%= @user.first_name.capitalize%> <br><%= @user.last_name.capitalize%></td></tr>
         <tr><td>Email</td><td class="table-content"><%= @user.email%></td></tr>

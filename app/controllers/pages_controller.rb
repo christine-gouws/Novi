@@ -27,7 +27,7 @@ class PagesController < ApplicationController
     @qoute = @qoutes.sample
   end
 
-  def profile
+  def dashboard
     following?
     @new_following = Following.new
   end

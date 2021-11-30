@@ -4,21 +4,18 @@
       <h1><%= @current_user.first_name.capitalize %></h1>
 
     </div>
-      <%= simple_form_for @user do |f| %>
-          <%= f.input :first_name %>
-          <%= f.input :description %>
-      <% end %>
       <div class="b-info">
-
-
-        <h5 class="b-description"><strong>Description</strong><br> <%= @current_user.description %></h5>
+      <%= simple_form_for @user, url: profile_path(@user) do |f| %>
+        <h5 class="b-description"><strong>Description</strong><%= f.input :description %></h5>
         <%= image_tag @current_user.photo, class: "avatar-huge d-none d-sm-block" %>
         <%= image_tag @current_user.photo, class: "avatar d-block d-sm-none" %>
 
         <table class="b-table">
-        <tr><td>Full name</td><td class="table-content"><%= @current_user.first_name.capitalize%> <br><%= @current_user.last_name.capitalize%></td></tr>
-        <tr><td>Email</td><td class="table-content"><%= @current_user.email%></td></tr>
-        </table>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :email %>
+        <%= f.submit class: "button-form" %>
+      <% end %>
       </div>
 
     <div class="activity d-none d-sm-block">
