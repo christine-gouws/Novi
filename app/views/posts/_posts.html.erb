@@ -1,8 +1,15 @@
  <% post.posts.each do |sub_post| %>
-    <div class="sub_post">
-        <h3><%= sub_post.comment %></h3>
-          <%= link_to '🗑', post_path(sub_post, params:{ brand_id: @brand.id }), method: :delete %>
-        <p><%= sub_post.user.email %></p>
+
+    <div id="<%= "post-#{sub_post.id}" %>" class="sub_post">
+        <a href="<%=profile_path(sub_post.user_id) %>"><%= image_tag sub_post.user.photo, class: "avatar-post-small"%></a>
+        <div class="post-content">
+          <p class="post-time"><%= link_to sub_post.user.first_name, profile_path(sub_post.user_id) %> <%=distance_of_time_in_words((Time.now.to_i - sub_post.created_at.to_i))%></p>
+          <div class="content">
+          <h3><%= sub_post.comment %></h3>
+        </div>
+        <%= link_to 'delete', post_path(sub_post, params:{ brand_id: @brand.id }), method: :delete %>
+        </div>
+
     </div>
     <%= render "posts/posts", post: sub_post %>
 <% end %>
