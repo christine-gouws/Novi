@@ -18,7 +18,7 @@
         <tr><td>Email</td><td class="table-content"><%= current_user.email%></td></tr>
         </table>
       </div>
-       <button class="button-logout"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
+       <button class="button-logout d-block d-sm-none"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
 
     <div class="activity d-none d-sm-block">
       FOLLOWING:
