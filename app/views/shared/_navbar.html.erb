@@ -6,8 +6,13 @@
   </a>
   <div class="d-flex align-items-center">
     <a href="<%= about_path%>" class="d-none d-sm-block about mr-5">About us</a>
+<<<<<<< HEAD
+    <a href="<%= feed_path%>" class="d-none d-sm-block about mr-5">Your feed</a>
+    <a href="<%= registration_path%>" class="d-none d-sm-block about mr-5">Registration</a>
+=======
     <a href="<%= feed_path%>" class="d-none d-sm-block about mr-5">your feed</a>
-    <a href="<%= registration_path%>" class="d-none d-sm-block about mr-5">registration</a>
+    <a href="<%= brand_registration_path%>" class="d-none d-sm-block about mr-5">registration</a>
+>>>>>>> e955f61b1cfa696696c0d408d3c81cf75037e34a
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <i class="fas fa-camera cam"><input type="file" name="image" accept="image/*" capture="environment"></i>
       <ul class="navbar-nav mr-auto">
@@ -15,14 +20,14 @@
 
         </li>
         <li class="dropdown">
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, height: 50, width: 50, class: "avatar-large" %>
         <% else %>
           <a class="btn btn-ghost" href="#">Account</a>
         <% end %>
         <ul class="dropdown-content">
           <% if user_signed_in? %>
-            <%= link_to 'Profile', profile_path %>
+            <%= link_to 'Profile', dashboard_path %>
             <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
           <% end %>
         </ul>

@@ -66,6 +66,7 @@ brand_1 = Brand.create!(
   )
 
 
+
 brand_2 = Brand.create!(
   brand_image: "sezane.jpg",
   brand_name: "Sézane",
