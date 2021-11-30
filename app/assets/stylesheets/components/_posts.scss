@@ -6,6 +6,7 @@ label.text.optional {
 #post-actions{
   display: flex;
   gap: 3em;
+  justify-content: space-between;
   p.post-user{
     color: darkgrey;
     font-size: 12px;
@@ -25,10 +26,12 @@ label.text.optional {
 }
 .sub_post {
   display: flex;
-  gap: 3em;
+  width: fit-content;
+  align-items: center;
   margin-left: 8%;
   h3 {
     font-size: 14px;
+    margin-right: 2rem;
   }
   p {
     color: darkgrey;
@@ -37,37 +40,67 @@ label.text.optional {
 }
 .post {
   box-shadow:  rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  margin-left: 8%;
   margin-bottom: 2em;
+  display: flex;
+  width: fit-content;
+  min-width: 45vw;
+  margin-right: 50px;
 }
 
-// Desktop
-@media(min-width: 1024px) {
-  textarea.form-control {
-  max-width: 44em;
-  }
-  .posts {
-   max-width: 800px;
-   margin-bottom: 2em;
-  }
+.post-content{
+  padding-left: 1rem;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
 }
 
-// Tablet
-@media(max-width: 1024px) {
-}
 
-// Mobile
+.post-time{
+  color: grey;
+  font-size: 10px;
+}
+// mobile
 @media(max-width: 480px) {
 
   textarea.form-control {
   max-width: 20em
 }
- .posts {
-   max-width: 800px;
-   margin-bottom: 2em;
-  }
+.posts {
+  padding-bottom: 5em;
+  min-width: 200px;
+  padding-left: 1rem;
+}
 #post-actions{
   display: flex;
   gap: 1em;
 }
+
+.sub_post{
+  margin-left: 0;
+}
+.post-content{
+  padding-left: 1rem;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+}
+}
+// Desktop
+@media(min-width: 1024px) {
+  textarea.form-control {
+  max-width: 44em;
+}
+
+.posts-container{
+  padding: 50px;
+  background-color: white;
+
+}
+.posts {
+  padding-left: 3.5rem;
+   margin: 0 auto;
+   width: 100%;
+   margin-bottom: 2em;
+  }
 }

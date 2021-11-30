@@ -5,6 +5,7 @@
 
       <a class="button-edit" href="<%= edit_profile_path(current_user) %>"><i class='fas fa-user-edit'></i></a>
 
+
     </div>
       <div class="b-info">
         <h5 class="b-description"><strong>Description</strong><br> <%= @current_user.description %></h5>
@@ -17,6 +18,7 @@
         <tr><td>Email</td><td class="table-content"><%= current_user.email%></td></tr>
         </table>
       </div>
+       <button class="button-logout d-block d-sm-none"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
 
     <div class="activity d-none d-sm-block">
       FOLLOWING:
@@ -33,7 +35,7 @@
       <div class="f-users">
         <% @current_user.followings.each do |following| %>
           <% if following.followable_type == "User" %>
-            <a href="<%=user_path(following.followable) %>"class="user-card" style="background-image:url('<%= cl_image_path(following.followable.photo.key)%>')">
+            <a href="<%=profile_path(following.followable) %>"class="user-card" style="background-image:url('<%= cl_image_path(following.followable.photo.key)%>')">
             </a>
           <% end %>
         <% end %>
@@ -61,7 +63,7 @@
       <div class="f-users">
         <% @current_user.followings.each do |following| %>
           <% if following.followable_type == "User" %>
-            <a href="<%=user_path(following.followable) %>"class="user-card" style="background-image:url('<%= cl_image_path(following.followable.photo.key)%>')">
+            <a href="<%=profile_path(following.followable) %>"class="user-card" style="background-image:url('<%= cl_image_path(following.followable.photo.key)%>')">
             </a>
           <% end %>
         <% end %>
