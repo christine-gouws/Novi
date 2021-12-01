@@ -24,6 +24,33 @@ hr{
   padding: 10vh 0;
 }
 
+.about-images {
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    filter: grayscale(100%);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.how-images {
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    filter: grayscale(100%);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.how-card {
+ display: flex;
+ flex-direction: column;
+ gap: 2em;
+}
+
+
 
 .why{
   text-align: right;

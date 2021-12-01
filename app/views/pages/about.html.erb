@@ -1,39 +1,51 @@
 <div class="about-page">
 <div class="us">
   <h2>Us</h2>
-  <p>
-    we are a group of student from Le Wagon that are interested in ethical clothing
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+  <p class="mb-4">
+    We are a group of students from Le wagon Brussels coding school #batch748.
+    We have partnered together based on the shared interest of clothing and conscious shopping, to bring
+    a product that provides a synopsis on major brands out on the market.
+    <div class="about-images">
+      <%= image_tag "hans.jpg", class: "hans", width: 150, height: 150 %>
+      <%= image_tag "layla.jpg", width: 150, height: 150, crop: :thumb, gravity: :face%>
+      <%= image_tag "tina.jpg", width: 150, height: 150, crop: :thumb, gravity: :face%>
+    </div>
+
 </div>
 <hr>
 <div class="why-container">
   <div class="why">
     <h2>Why</h2>
     <p>
-      we are a group of student from Le Wagon that are interested in ethical clothing
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+     As consumerisim expands, we recongise the need to provide the consumer with a transparent veiw of the products available on the market.
+     Transparency is vital for holding major brands accountable for their human rights and environmental impacts across their supply chains.
+     Creating a more conscious consumer market will in turn encourage businesses to be more forthcoming on how, where and by whom their products are made.
     </p>
   </div>
 </div>
 <hr>
 <div class="how">
-    <h2>How</h2>
+    <h2>How?</h2>
+  <p class= "mb-5">
+  Novi is an easy-to-use application and available on all all platforms.
+  You will be able to read the synopsis of brands by following our <strong> 3-step </strong> process.
+  </p>
   <p>
-    we are a group of student from Le Wagon that are interested in ethical clothing
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <div class="how-images">
+      <div class="how-card">
+        <%= image_tag "shirt.png", width: 150, height: 150 %>
+        <p><strong>Step 1:</strong> Find clothing item. </p>
+      </div>
+      <div class="how-card">
+        <%= image_tag "qr.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
+        <p><strong>Step 2:</strong> Scan barcode. </p>
+      </div>
+
+      <div class="how-card">
+        <%= image_tag "webpage.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
+        <p><strong>Step 3:</strong> Read synopsis. </p>
+      </div>
+    </div>
   </p>
 </div>
 
