@@ -8,7 +8,12 @@ class PagesController < ApplicationController
   def feed
     @brands = Brand.all
     @users = User.all
+    @posts = Post.all
     @top12 = Following.where(user: current_user, followable_type: "Brand")
+    @followed_users = Following.where(user: current_user, followable_type: "User")
+    @followed_users.each do |user|
+      @post = @posts.where(user: user.followable)
+    end
     count = Brand.count
     random_offset = rand(count)
     @brand = Brand.offset(random_offset).first

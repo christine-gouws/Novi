@@ -1,8 +1,8 @@
 <div class="search-page">
   <div data-controller="search-brands">
-      <div class="search-nav" data-brands-filter-target="content">
+      <div id="brands-search"class="search-nav" data-brands-filter-target="content">
           <%= form_with url: brands_path, method: :get, html: { class:
-          'mb-4', data: { search_brands_target: 'form' } } do |f| %>
+          'mt-4', data: { search_brands_target: 'form' } } do |f| %>
           <%= f.text_field :query,
                       class: "form-control",
                       placeholder: 'Type a brand name',
@@ -10,7 +10,6 @@
                       data: { search_brands_target: 'input', action: 'keyup->search-brands#update'} %>
                       <% end %>
       </div>
-
 
     <div class='brands-container-mobile'data-search-brands-target='list'>
         <% @brands.each do |brand| %>
@@ -23,6 +22,13 @@
           </a>
         <% end %>
       </div>
+
+       <div class='brands-container-full'data-search-brands-target='list'>
+      <% @brands.each do |brand| %>
+        <a href="<%=brand_path(brand) %>"class="brand-card" style="background-image:url('<%= image_url brand.brand_image %>')">
+        </a>
+      <% end %>
+    </div>
 
 
   </div>
