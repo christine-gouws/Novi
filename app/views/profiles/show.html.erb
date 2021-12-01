@@ -16,7 +16,7 @@
       </div>
       <div class="follow">
         <% if @following.present? %>
-          <%= link_to "UNFOLLOW", following_path(@following),class: "button-form", method: :delete %>
+          <%= link_to "UNFOLLOW", following_path(@following),class: "btn-unfollow", method: :delete %>
         <% else %>
           <%= simple_form_for @new_following do |f| %>
             <%= f.submit "Follow", class:"button-form" %>

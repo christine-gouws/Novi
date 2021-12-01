@@ -4,5 +4,5 @@
 meta_product_name: "Novi"
 meta_title: "Novi - Shop Transparently & Consciously"
 meta_description: "Relevant description"
-meta_image: "clothes.png" # should exist in `app/assets/images/`
+meta_image: "NOVI-image.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
