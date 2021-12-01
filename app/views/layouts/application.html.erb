@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Novi |Shop Consciously & Transparently|</title>
+    <%# <title> Novi |Shop Consciously & Transparently|</title> %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-    <!--favicon links below -->
-    <%= favicon_link_tag %>
 
     <!--Social Meta Tags -->
         <title><%= meta_title %></title>
@@ -31,6 +25,13 @@
         <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
         <meta name="twitter:image:src" content="<%= meta_image %>">
 
+
+        <%# stylesheet & Javascript %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <!--favicon links below -->
+    <%= favicon_link_tag %>
 
 
 
