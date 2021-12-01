@@ -5,8 +5,8 @@
     </div>
       <div class="b-info">
         <h5 class="b-description"><strong>Description</strong><br> <%= @user.description %></h5>
-        <%= image_tag @user.photo, class: "avatar-huge d-none d-sm-block" if @user.photo.attached?%>
-        <%= image_tag @user.photo, class: "avatar d-block d-sm-none" if @user.photo.attached?%>
+        <%= cl_image_tag @user.photo.key, class: "avatar-huge d-none d-sm-block" if @user.photo.attached?%>
+        <%= cl_image_tag @user.photo.key, class: "avatar d-block d-sm-none" if @user.photo.attached?%>
 
         <table class="b-table">
         <tr><td>First name</td><td class="table-content"><%= @user.first_name.capitalize%></td></tr>
