@@ -1,7 +1,7 @@
  <% post.posts.each do |sub_post| %>
 
     <div id="<%= "post-#{sub_post.id}" %>" class="sub_post">
-        <a href="<%=profile_path(sub_post.user_id) %>"><%= image_tag sub_post.user.photo, class: "avatar-post-small"%></a>
+        <a href="<%=profile_path(sub_post.user_id) %>"><%= cl_image_tag sub_post.user.photo.key, class: "avatar-post-small"%></a>
         <div class="post-content">
           <p class="post-time"><%= link_to sub_post.user.first_name, profile_path(sub_post.user_id) %> <%=distance_of_time_in_words((Time.now.to_i - sub_post.created_at.to_i))%></p>
           <div class="content">

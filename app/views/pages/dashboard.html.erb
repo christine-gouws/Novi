@@ -9,8 +9,8 @@
     </div>
       <div class="b-info">
         <h5 class="b-description"><strong>Description</strong><br> <%= @current_user.description %></h5>
-        <%= image_tag current_user.photo, class: "avatar-huge d-none d-sm-block" if current_user.photo.attached?%>
-        <%= image_tag current_user.photo, class: "avatar d-block d-sm-none" if current_user.photo.attached?%>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-huge d-none d-sm-block" if current_user.photo.attached?%>
+        <%= cl_image_tag current_user.photo.key, class: "avatar d-block d-sm-none" if current_user.photo.attached?%>
 
         <table class="b-table">
         <tr><td>First name</td><td class="table-content"><%= current_user.first_name.capitalize%></td></tr>

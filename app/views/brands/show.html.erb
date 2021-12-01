@@ -69,7 +69,7 @@
         <% @posts.each do |post| %>
          <% if post.messageable_id == @brand.id %>
           <div id="<%= "post-#{post.id}" %>" class="post p-2" data-controller="comments">
-              <a href="<%=profile_path(post.user_id) %>"><%= image_tag post.user.photo, class: "avatar-post"%></a>
+              <a href="<%=profile_path(post.user_id) %>"><%= cl_image_tag post.user.photo.key, class: "avatar-post"%></a>
             <div class="post-content">
                    <p class="post-time"><%= link_to post.user.first_name, profile_path(post.user_id) %> <%=distance_of_time_in_words((Time.now.to_i - post.created_at.to_i))%></p>
 
