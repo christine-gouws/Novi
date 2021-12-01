@@ -33,7 +33,7 @@
       <div class="f-users">
         <% @current_user.followings.each do |following| %>
           <% if following.followable_type == "User" %>
-            <a href="<%=user_path(following.followable) %>"class="user-card" style="background-image:url('<%= cl_image_path(following.followable.photo.key)%>')">
+            <a href="<%=profile_path(following.followable) %>"class="user-card" style="background-image:url('<%= cl_image_path(following.followable.photo.key)%>')">
             </a>
           <% end %>
         <% end %>
@@ -61,7 +61,7 @@
       <div class="f-users">
         <% @current_user.followings.each do |following| %>
           <% if following.followable_type == "User" %>
-            <a href="<%=user_path(following.followable) %>"class="user-card" style="background-image:url('<%= cl_image_path(following.followable.photo.key)%>')">
+            <a href="<%=profile_path(following.followable) %>"class="user-card" style="background-image:url('<%= cl_image_path(following.followable.photo.key)%>')">
             </a>
           <% end %>
         <% end %>
