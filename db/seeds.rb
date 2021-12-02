@@ -194,7 +194,7 @@ brand_10 = Brand.create!(
   user: users.sample
   )
 
-scrape_zal(brand_11)
+scrape_zal(brand_10)
 
 brand_11 = Brand.create!(
   brand_image: "patagonia.jpg",
@@ -235,7 +235,7 @@ brand_13 = Brand.create!(
   user: users.sample
   )
 
-scrape_zal(brand_14)
+scrape_zal(brand_13)
 
 brand_14 = Brand.create!(
   brand_image: "organic.jpg",
