@@ -18,11 +18,11 @@
                      data: { search_brands_target: 'input', action: 'keyup->search-brands#update'} %>
                      <% end %>
     </div>
-
-    <h2>How?</h2>
-  <p class= "mb-5">
-  Novi is an easy-to-use application and available on all all platforms.
-  You will be able to read the synopsis of brands by following our <strong> 3-step </strong> process.
+<div class="how-feed">
+  <h2 class="top-title">How?</h2>
+  <p class= "m-3 mb-5">
+    Novi is an easy-to-use application and available on all all platforms.
+    You will be able to read the synopsis of brands by following our <strong> 3-step </strong> process.
   </p>
   <p>
     <div class="how-images">
@@ -41,7 +41,7 @@
       </div>
     </div>
   </p>
-
+</div>
 
 
   <h2 class="top-title">Followed</h2>
@@ -68,7 +68,10 @@
   <div class="feed-activity">
       <% @user_posts.flatten.each do |post| %>
        <div class="feed-post">
-        <%= post.comment %>
+        <a href="<%=profile_path(post.user_id) %>"><%= cl_image_tag post.user.photo.key, class: "avatar-post"%></a>
+        <p><%= post.comment %></p>
+        <p class="post-time"><%= link_to post.user.first_name, profile_path(post.user_id) %> <%=distance_of_time_in_words((Time.now.to_i - post.created_at.to_i))%></p>
+
        </div>
       <% end %>
   </div>
