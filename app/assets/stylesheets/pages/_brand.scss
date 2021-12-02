@@ -1,3 +1,8 @@
+
+
+// Desktop
+@media(min-width: 1024px) {
+
 .search {
   background: $dark;
 }
@@ -8,6 +13,7 @@
   background: $off-white;
   padding: 100px;
 }
+
 .search-title {
   position: relative;
   padding-left: 580px;
@@ -15,9 +21,6 @@
   color: $off-white;
 }
 
-
-// Desktop
-@media(min-width: 1024px) {
   .b-container {
     position: relative;
     top: -8vh;
@@ -106,29 +109,29 @@
 
 
 
-// Tablet
-@media(max-width: 1024px) {
-  .b-container{
-   background-color: white;
- }
-  .b-image{
-    position: absolute;
-    right: -9em;
-  }
-  .brand-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 400px;
-    padding-left: 8em;
-    padding: 1rem 1.75rem;
-  }
-}
-
-
 
 // Mobile
 @media(max-width: 480px) {
+
+.search {
+  background: $dark;
+  position: relative;
+  top: -8vh;
+}
+#brands-search {
+  padding-bottom: 60px;
+}
+.brands-container-full {
+  background: $off-white;
+  padding: 100px;
+}
+
+.search-title {
+  position: relative;
+  padding: 50px;
+  color: $off-white;
+}
+
   .b-container{
     background-color: white;
     display: flex;

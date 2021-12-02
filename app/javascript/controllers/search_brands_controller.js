@@ -1,12 +1,13 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['form', 'input', 'mlist', 'flist'];
+  static targets = ['form', 'input', 'full', 'mobile'];
 
   connect() {
     console.log(this.formTarget);
     console.log(this.inputTarget);
-    console.log(this.listTarget);
+    console.log(this.fullTarget);
+    console.log(this.mobileTarget);
   }
   update() {
 
@@ -16,9 +17,8 @@ export default class extends Controller {
     .then(response => response.text())
     .then((data) => {
 
-      console.log(data)
-      this.mlistTarget.innerHTML = data;
-      this.flistTarget.innerHTML = data;
+      this.fullTarget.innerHTML = data;
+      this.mobileTarget.innerHTML = data;
 
     })
 }
