@@ -23,12 +23,17 @@
 
 .btn-search{
   padding: 0.5rem 1rem;
-  background-color: $light;
+  background-color: $medium;
   border-radius: 15px;
   position: relative;
   color: $off-white;
   left: 46vw;
   top: -10vh;
+
+  &:hover {
+    text-decoration: none;
+    color: grey;
+  }
 }
 
  .btn-unfollow  {

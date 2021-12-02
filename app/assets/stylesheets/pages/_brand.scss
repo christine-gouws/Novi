@@ -4,13 +4,14 @@
 @media(min-width: 1024px) {
 
 .search {
-  background: $dark;
+  background: #f5f3f1;
 }
+
 #brands-search {
   padding-bottom: 60px;
 }
 .brands-container-full {
-  background: $off-white;
+  background: $medium;
   padding: 100px;
 }
 
@@ -18,7 +19,7 @@
   position: relative;
   padding-left: 580px;
   padding-top: 100px;
-  color: $off-white;
+  color: $medium;
 }
 
   .b-container {
