@@ -1,5 +1,9 @@
 
+
+
+
 <div class="b-container">
+<div class="bcol-1">
   <div class="brand-container">
     <div class="brand-items">
       <h1><%= @brand.brand_name %></h1>
@@ -54,8 +58,6 @@
       </div>
   </div>
 </div>
-
-
   <div class="posts-container">
     <div class="posts bg-white">
       <h1 id="thread" class="p-title">Thread</h3>
@@ -105,6 +107,9 @@
       <% end %>
     </div>
   </div>
+</div>
+
+
 
 <div>
   <a href="<%=brand_path(@brand) %> "class="b-image" style="background-image:url('<%= image_url @brand.brand_image %>')">
