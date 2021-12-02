@@ -4,6 +4,7 @@
 
 body{
   height: fit-content;
+  color: $medium;
 }
 
 .img-container{
@@ -12,9 +13,11 @@ body{
   height: 75vh;
   margin: 0 auto;
 }
+
 .products-first{
   display: none;
 }
+
 .feed-page{
   background-color: $off-white;
 }
