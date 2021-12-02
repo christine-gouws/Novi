@@ -106,28 +106,6 @@
 }
 
 
-
-// Tablet
-@media(max-width: 1024px) {
-  .b-container{
-   background-color: white;
- }
-  .b-image{
-    position: absolute;
-    right: -9em;
-  }
-  .brand-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 400px;
-    padding-left: 8em;
-    padding: 1rem 1.75rem;
-  }
-}
-
-
-
 // Mobile
 @media(max-width: 480px) {
   .b-container{
@@ -165,16 +143,6 @@
     width: 350px;
   }
   }
-
-  .b-image{
-    position: absolute;
-    background-color: white;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 7em;
-    width: 16em;
-    bottom: 130em;
-    right: 7em;
   }
 
   .brand-items {
@@ -204,9 +172,10 @@
       width: 145px;
       }
   }
-
   .p-card:hover {
     opacity: 50%;
   }
 
-}
+  .p-card:hover {
+    opacity: 50%;
+  }
