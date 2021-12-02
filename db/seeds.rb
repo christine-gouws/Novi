@@ -54,14 +54,14 @@ users = [tina, layla, hans]
 #   image = element.search('img')
 #   next unless image.attr('alt')
 brand_1 = Brand.create!(
-  brand_image: "patagonia.jpg",
-  brand_name: "Patagonia",
-  description: "Fair trade outdoor clothing",
-  origin: "California, USA",
-  carbon_footprint: "Works with US factories in Texas and North Carolina and fair trade factories worldwide.",
-  ethics: "Certified B Corp, Fair Trade Certified, organic cotton & recycled materials, gives back,
-  environmental sustainability initiatives, secondhand shop",
-  material_resources: "Recycled materials, organic cotton.",
+  brand_image: "Freitag.jpg",
+  brand_name: "Freitag",
+  description: "Recycled materials and handmade.",
+  origin: "Zurich, Germany",
+  carbon_footprint: "The products are cut by hand in the F-Actory Noerd, the nerve center of the Freitag brand in Zurich.
+  Then, the thick pieces of fabric are assembled, always by hand, in Europe and Tunisia.",
+  ethics: "To transform old tarps into a vintage collection they are washed with collected rainwater (15,000 liters per day).",
+  material_resources: "FREITAG bags are produced from used truck tarps and, like many other durable items, these are made of PVC.",
   user: users.sample
   )
 
@@ -194,4 +194,72 @@ brand_10 = Brand.create!(
   user: users.sample
   )
 
-scrape_zal(brand_10)
+scrape_zal(brand_11)
+
+brand_11 = Brand.create!(
+  brand_image: "patagonia.jpg",
+  brand_name: "Patagonia",
+  description: "Fair trade outdoor clothing",
+  origin: "California, USA",
+  carbon_footprint: "Works with US factories in Texas and North Carolina and fair trade factories worldwide.",
+  ethics: "Certified B Corp, Fair Trade Certified, organic cotton & recycled materials, gives back,
+  environmental sustainability initiatives, secondhand shop",
+  material_resources: "Recycled materials, organic cotton.",
+  user: users.sample
+  )
+
+scrape_zal(brand_11)
+
+brand_12 = Brand.create!(
+  brand_image: "private.jpg",
+  brand_name: "Private Clothing",
+  description: "Fun and fair fashion",
+  origin: "Antwerp, Belgium",
+  carbon_footprint: "All Private Clothing are designed and manufactured in Europe.",
+  ethics: "All Private Clothing are designed and manufactured in Europe.",
+  material_resources: "All Private Clothing are designed and manufactured in Europe.",
+  user: users.sample
+  )
+
+scrape_zal(brand_12)
+
+brand_13 = Brand.create!(
+  brand_image: "soleil.jpg",
+  brand_name: "Soleil Soleil",
+  description: "Climate neutral fashion",
+  origin: "Australia",
+  carbon_footprint: "Commited to carbon neutral delivery",
+  ethics: "Peta approved Vegan, One tree planted to give back to the planet.
+  Keeping a close relationship with partner factories.",
+  material_resources: "100% Recycled Cotton. Organic/BCI/Upcycled",
+  user: users.sample
+  )
+
+scrape_zal(brand_14)
+
+brand_14 = Brand.create!(
+  brand_image: "organic.jpg",
+  brand_name: "Organic Basics",
+  description: "Sustainable basics",
+  origin: "Copenhagen, Denmark",
+  carbon_footprint: "Renewable energy and limits the amount of chemicals.",
+  ethics: "Factories free of child labor and forced labor, workers are surrounded in a safe space, paid a living wage,
+  offered employee perks and treated with respect.",
+  material_resources: "Organic cotton, recycled nylon.",
+  user: users.sample
+  )
+
+scrape_zal(brand_14)
+
+brand_15 = Brand.create!(
+  brand_image: "etiko.jpg",
+  brand_name: "Etiko",
+  description: "Wear no evil.",
+  origin: "Australia",
+  carbon_footprint: "Becoming carbon neutral. ",
+  ethics: "Fairtrade, Bcorp, Social traders. Eco-friendly and fair trade clothing and shoes",
+  material_resources: "Organic cotton, no animal glues, natural rubber, recycled packaging.",
+  user: users.sample
+  )
+
+scrape_zal(brand_15)
