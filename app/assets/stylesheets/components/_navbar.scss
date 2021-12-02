@@ -6,6 +6,7 @@
 }
 
 .novi-title{
+  color: $off-white;
   font-weight: bolder;
   margin-bottom: 0;
 }
@@ -15,18 +16,17 @@
 }
 
 .about{
-  color: $dark;
+  color: $off-white;
 }
 .about:hover{
   text-shadow: 2px 2px 4px #0000005e;
 
 }
 
-
 .navbar-lewagon {
   justify-content: space-between;
   align-items: center;
-  background: $off-white;
+  background: $dark;
   height: 8vh;
   position: sticky;
   width: 100%;
