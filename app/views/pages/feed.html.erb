@@ -6,6 +6,7 @@
     <h2 class="qoute"><%= @qoute %></h2>
 
   </div>
+
     <%= link_to "Our brands", brands_path, class:'btn-search' %>
     <div class="search-nav d-none d-sm-block" data-brands-filter-target="content">
         <%= form_with url: brands_path, method: :get, html: { class:
@@ -17,6 +18,31 @@
                      data: { search_brands_target: 'input', action: 'keyup->search-brands#update'} %>
                      <% end %>
     </div>
+
+    <h2>How?</h2>
+  <p class= "mb-5">
+  Novi is an easy-to-use application and available on all all platforms.
+  You will be able to read the synopsis of brands by following our <strong> 3-step </strong> process.
+  </p>
+  <p>
+    <div class="how-images">
+      <div class="how-card">
+        <%= image_tag "shirt.png", width: 150, height: 150 %>
+        <p><strong>Step 1:</strong> Find clothing item. </p>
+      </div>
+      <div class="how-card">
+        <%= image_tag "qr.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
+        <p><strong>Step 2:</strong> Scan barcode. </p>
+      </div>
+
+      <div class="how-card">
+        <%= image_tag "webpage.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
+        <p><strong>Step 3:</strong> Read synopsis. </p>
+      </div>
+    </div>
+  </p>
+
+
 
   <h2 class="top-title">Followed</h2>
 
@@ -40,32 +66,12 @@
   </div>
   <h2 class="top-title">Activity</h2>
   <div class="feed-activity">
-      <% @post.each do |post| %>
+      <% @user_posts.flatten.each do |post| %>
        <div class="feed-post">
-        <%= cl_image_tag post.user.photo.key, class: "avatar-post" %>
-        <p><%= post.user.first_name.capitalize %> commented:</p>
-        <p><%= post.comment %>  </p>
-        <p class="post-time"><%= link_to post.user.first_name, profile_path(post.user_id) %> <%=distance_of_time_in_words((Time.now.to_i - post.created_at.to_i))%></p>
+        <%= post.comment %>
        </div>
       <% end %>
-
   </div>
-  <div class="how-images">
-      <div class="how-card">
-        <%= image_tag "shirt.png", width: 150, height: 150 %>
-        <p><strong>Step 1:</strong> Find clothing item. </p>
-      </div>
-      <div class="how-card">
-        <%= image_tag "qr.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
-        <p><strong>Step 2:</strong> Scan barcode. </p>
-      </div>
 
-      <div class="how-card">
-        <%= image_tag "webpage.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
-        <p><strong>Step 3:</strong> Read synopsis. </p>
-      </div>
-    </div>
-
-</div>
 
 </div>

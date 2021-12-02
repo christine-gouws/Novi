@@ -78,9 +78,10 @@
 
               <div id = "post-actions" >
 
-                    <%= simple_form_for @like do |f| %>
+                    <%= simple_form_for @like,  data: { controller: "submit", "submit-target" => "form"  }  do |f| %>
                       <%= post.likes.count %>
-                      <%= f.submit "👍", class: "button-like" %>
+                      <i class="fas fa-thumbs-up" data-action="click->submit#submit"></i>
+
                       <%= f.input :post_id, input_html: {value: post.id} , as: :hidden %>
                     <% end %>
                     <div class="links">
