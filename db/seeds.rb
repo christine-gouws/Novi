@@ -54,7 +54,7 @@ users = [tina, layla, hans]
 #   image = element.search('img')
 #   next unless image.attr('alt')
 brand_1 = Brand.create!(
-  brand_image: "Freitag.jpg",
+  brand_image: "freitag.jpg",
   brand_name: "Freitag",
   description: "Recycled materials and handmade.",
   origin: "Zurich, Germany",
