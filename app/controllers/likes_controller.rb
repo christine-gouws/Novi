@@ -3,7 +3,7 @@ class LikesController < ApplicationController
     @like = Like.new(like_params)
     @like.user = current_user
     @like.save!
-    redirect_to brand_path(@like.post.messageable_id)
+    redirect_to brand_path(@like.post.messageable_id, anchor: 'thread')
   end
 
   def destroy

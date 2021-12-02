@@ -4,7 +4,10 @@
 <div data-controller="search-brands">
   <div class="banner-search">
     <h2 class="qoute"><%= @qoute %></h2>
+
   </div>
+
+    <%= link_to "Our brands", brands_path, class:'btn-search' %>
     <div class="search-nav d-none d-sm-block" data-brands-filter-target="content">
         <%= form_with url: brands_path, method: :get, html: { class:
         'mb-4', data: { search_brands_target: 'form' } } do |f| %>
@@ -16,15 +19,40 @@
                      <% end %>
     </div>
 
+    <h2>How?</h2>
+  <p class= "mb-5">
+  Novi is an easy-to-use application and available on all all platforms.
+  You will be able to read the synopsis of brands by following our <strong> 3-step </strong> process.
+  </p>
+  <p>
+    <div class="how-images">
+      <div class="how-card">
+        <%= image_tag "shirt.png", width: 150, height: 150 %>
+        <p><strong>Step 1:</strong> Find clothing item. </p>
+      </div>
+      <div class="how-card">
+        <%= image_tag "qr.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
+        <p><strong>Step 2:</strong> Scan barcode. </p>
+      </div>
 
-  <div class='brands-container-full'data-search-brands-target='list'>
-      <% @brands.each do |brand| %>
-        <a href="<%=brand_path(brand) %>"class="brand-card" style="background-image:url('<%= image_url brand.brand_image %>')">
+      <div class="how-card">
+        <%= image_tag "webpage.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
+        <p><strong>Step 3:</strong> Read synopsis. </p>
+      </div>
+    </div>
+  </p>
+
+
+
+  <h2 class="top-title">Followed</h2>
+
+  <div class='top12-full'data-search-brands-target='list'>
+      <% @top12.each do |brand| %>
+        <a href="<%=brand_path(brand.followable) %>"class="brand-card" style="background-image:url('<%= image_url brand.followable.brand_image %>')">
         </a>
       <% end %>
     </div>
 
-  <h2 class="top-title">Followed</h2>
    <div class='brands-container-mobile'>
     <% @top12.each do |brand| %>
       <a href="<%=brand_path(brand.followable)%>" class="brand-card">
@@ -36,5 +64,14 @@
       </a>
     <%end %>
   </div>
-</div>
+  <h2 class="top-title">Activity</h2>
+  <div class="feed-activity">
+      <% @user_posts.flatten.each do |post| %>
+       <div class="feed-post">
+        <%= post.comment %>
+       </div>
+      <% end %>
+  </div>
+
+
 </div>

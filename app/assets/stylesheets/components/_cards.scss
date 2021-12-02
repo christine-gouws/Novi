@@ -51,6 +51,19 @@
   background-size: cover;
 
 }
+
+.top12-full{
+  height: fit-content;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0 2vw;
+  margin: 0 auto;
+  background-size: cover;
+
+}
 .brands-container-mobile{
   display: none;
 }
