@@ -2,6 +2,10 @@
   height: 100vh;
 }
 
+a:hover {
+  color: darkblue;
+}
+
 #myVideo {
     position: fixed;
     left: 0;
@@ -22,7 +26,7 @@
 .card {
   width: 100%;
   max-width: 500px;
-  background-color: $light;
+  background-color: rgba(216, 211, 198, 0.733);
   border-radius: 10px;
   box-shadow: 0 10px 20px 0 rgba(#999, .25);
   padding: 1rem 1.75rem;
