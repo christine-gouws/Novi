@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 .search {
   background: $dark;
 }
@@ -18,7 +16,6 @@
 }
 
 
->>>>>>> 0e9347b29e4c30a78cb04f64cea367e65c6a490d
 // Desktop
 @media(min-width: 1024px) {
   .b-container {
@@ -41,10 +38,6 @@
     padding: 1rem 4rem;
     background-color: white;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> 0e9347b29e4c30a78cb04f64cea367e65c6a490d
   .b-table tr{
   border-bottom: solid 1px black;
   word-break: normal;
@@ -77,34 +70,6 @@
     top: 11em;
     left: 45em;
     box-shadow:  rgba(149, 157, 165, 0.2) 0px 8px 24px;
-<<<<<<< HEAD
-    }
-  .brand-items {
-    display: flex;
-    justify-content: space-between;
-  }
-  .b-description {
-    padding: 20px 0px 50px 0px;
-  }
-  label.select.optional {
-    display: none;
-  }
-  .p-card{
-    background-size: cover;
-    background-position: center;
-    height: 150px;
-    width: 160px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    opacity: 100%;
-    p{
-      width: 145px;
-    }
-=======
     }
 
   .brand-items {
@@ -133,7 +98,6 @@
     p{
       width: 145px;
     }
->>>>>>> 0e9347b29e4c30a78cb04f64cea367e65c6a490d
   }
   .p-card:hover {
     opacity: 50%;
