@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['form', 'input', 'list'];
+  static targets = ['form', 'input', 'mlist', 'flist'];
 
   connect() {
     console.log(this.formTarget);
@@ -15,7 +15,10 @@ export default class extends Controller {
   fetch(url, { headers: { 'Accept': 'text/plain' } })
     .then(response => response.text())
     .then((data) => {
-      this.listTarget.innerHTML = data;
+
+      console.log(data)
+      this.mlistTarget.innerHTML = data;
+      this.flistTarget.innerHTML = data;
 
     })
 }

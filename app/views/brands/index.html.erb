@@ -1,5 +1,7 @@
 <div class="search-page">
+ <div class="search">
   <div data-controller="search-brands">
+   <h1 class="search-title"> Search all brands</h1>
       <div id="brands-search"class="search-nav" data-brands-filter-target="content">
           <%= form_with url: brands_path, method: :get, html: { class:
           'mt-4', data: { search_brands_target: 'form' } } do |f| %>
@@ -10,8 +12,9 @@
                       data: { search_brands_target: 'input', action: 'keyup->search-brands#update'} %>
                       <% end %>
       </div>
+  </div>
 
-    <div class='brands-container-mobile' data-search-brands-target='list'>
+    <div class='brands-container-mobile'data-search-brands-target='mlist'>
         <% @brands.each do |brand| %>
           <a href="<%= brand_path(brand) %> "class="brand-card">
             <%= image_tag brand.brand_image, class: "brand__img"  %>
@@ -23,7 +26,7 @@
         <% end %>
       </div>
 
-       <div class='brands-container-full' data-search-brands-target='list'>
+       <div class='brands-container-full'data-search-brands-target='flist'>
       <% @brands.each do |brand| %>
         <a href="<%=brand_path(brand) %>"class="brand-card" style="background-image:url('<%= image_url brand.brand_image %>')">
         </a>
