@@ -1,5 +1,21 @@
 
 // container
+
+#brands-search {
+  padding-bottom: 100px;
+}
+
+.brands-container-full{
+  background: $dark;
+  padding: 100px;
+}
+.search-title {
+  position: relative;
+  padding-left: 580px;
+  padding-top: 100px;
+
+}
+
 .b-container {
   display: flex;
   justify-content: center;
@@ -13,7 +29,7 @@
   max-width: 500px;
   padding: 1rem 1.75rem;
   margin-top: 5em;
-  background-color: white;
+  background-color: grey;
 }
 
 // brand description
