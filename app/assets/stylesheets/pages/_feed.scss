@@ -19,6 +19,14 @@ body{
   background-color: $off-white;
 }
 
+
+.how-feed{
+  text-align: center;
+  padding: 5rem;
+  position: relative;
+  top: -12vh;
+}
+
 .banner-search{
   background-image:linear-gradient(#0000005d, #00000054), url('https://images.pexels.com/photos/1460890/pexels-photo-1460890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
   background-size: cover;
