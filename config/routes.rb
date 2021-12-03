@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "about", to: "pages#about", as: :about
   get "registration", to: 'pages#registration', as: :brand_registration
   get "thankyou", to: 'pages#thankyou', as: :thankyou
+  get "landing", to: 'pages#landing', as: :landing
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :profiles, only: [:show, :edit, :update]

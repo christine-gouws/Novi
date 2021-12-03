@@ -18,6 +18,7 @@
                      data: { search_brands_target: 'input', action: 'keyup->search-brands#update'} %>
                      <% end %>
     </div>
+  <!--
 <div class="how-feed">
   <h2 class="top-title">How?</h2>
   <p class= "m-3 mb-5">
@@ -42,11 +43,11 @@
     </div>
   </p>
 </div>
-
+ -->
 
   <h2 class="top-title">Followed</h2>
 
-  <div class='top12-full'data-search-brands-target='list'>
+  <div class='top12-full d-none d-sm-flex'data-search-brands-target='list'>
       <% @top12.each do |brand| %>
         <a href="<%=brand_path(brand.followable) %>"class="brand-card" style="background-image:url('<%= image_url brand.followable.brand_image %>')">
         </a>

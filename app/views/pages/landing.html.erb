@@ -1,0 +1,47 @@
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="<%= root_path %>" >
+
+    <h3 class="novi-title">NOVI</h3>
+  </a>
+  <div>
+        <%= link_to 'Log In', new_user_session_path, class: "button-form btn-home" %>
+        <%= link_to 'Sign Up', new_user_registration_path, class: "button-form btn-home"  %>
+  </div>
+</div>
+
+
+
+<div class="banner-search">
+    <h2 class="qoute"><%= @qoute %></h2>
+
+  </div>
+
+
+    <%= link_to "Join NOVI", root_path, class:'btn-search' %>
+<div class="how-feed">
+  <h2 class="top-title">Try it yourself</h2>
+  <%= image_tag 'Qrcode.png', class: "qrcode" %>
+  <h2 class="top-title">How?</h2>
+  <p class= "m-3 mb-5">
+    Novi is an easy-to-use application and available on all all platforms.
+    You will be able to read the synopsis of brands by following our <strong> 3-step </strong> process.
+  </p>
+  <p>
+    <div class="how-images">
+      <div class="how-card">
+        <%= image_tag "shirt.png", width: 150, height: 150 %>
+        <p><strong>Step 1:</strong> Find clothing item. </p>
+      </div>
+      <div class="how-card">
+        <%= image_tag "qr.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
+        <p><strong>Step 2:</strong> Scan barcode. </p>
+      </div>
+
+      <div class="how-card">
+        <%= image_tag "webpage.png", width: 150, height: 150, crop: :thumb, gravity: :face%>
+        <p><strong>Step 3:</strong> Read synopsis. </p>
+      </div>
+    </div>
+  </p>
+</div>

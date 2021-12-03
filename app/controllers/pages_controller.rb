@@ -46,6 +46,21 @@ class PagesController < ApplicationController
   def registration
   end
 
+  def landing
+     @qoutes = [
+      '“Demand quality, not just in the products you buy, but in the life of the person who made it.” – Orsola de Castro',
+      '“Buy less. Choose Well. Make it Last.” – Vivienne Westwood',
+      '“Fast fashion isn’t free. Someone, somewhere, is paying.” – Lucy Siegle',
+      '“Care for your clothes like the good friends they are” – Joan Crawford',
+      '“Trust no multinational brand. Listen to garment workers instead.” – Aja Barber',
+      '“Waste isn’t waste until we waste it.” – WILL.I.AM',
+      "“No, no, I didn’t go to England, I went to London.” - Paris Hilton",
+      "“cake it until you make it” - tronches2cakes on instagram",
+      "“I thought Europe was a country”. - Kellie Pickler",
+      "“hug a tree they have less problems than people” - Tina "
+    ]
+    @qoute = @qoutes.sample
+  end
 
   def thankyou
   end

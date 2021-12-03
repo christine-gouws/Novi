@@ -21,6 +21,12 @@
   }
 }
 
+.qrcode{
+  margin-bottom: 100px;
+  height: 150px;
+  width: 150px;
+  text-align: center;
+}
 .btn-search{
   padding: 0.5rem 1rem;
   background-color: $medium;
@@ -28,7 +34,7 @@
   position: relative;
   color: $off-white;
   left: 46vw;
-  top: -10vh;
+  top: -20vh;
 
   &:hover {
     text-decoration: none;
