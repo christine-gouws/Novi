@@ -100,9 +100,11 @@
 
 .btn-comment{
   border: 0;
-  background-color: rgba(128, 128, 128, 0);
+  background-color: $dark;
   width: fit-content;
   box-shadow: none;
+  border-radius: 35px;
+  color: $off-white;
 }
 }
 @media only screen and (max-device-width: 480px) {
