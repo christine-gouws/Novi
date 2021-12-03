@@ -34,7 +34,7 @@
   position: relative;
   color: $off-white;
   left: 46vw;
-  top: -15vh;
+  top: -8vh;
 
   &:hover {
     text-decoration: none;
@@ -106,6 +106,7 @@
   border-radius: 35px;
   color: $off-white;
 }
+
 }
 @media only screen and (max-device-width: 480px) {
  .button-form  {
