@@ -94,7 +94,7 @@
               <div class="comment d-none" data-comments-target='form'>
                   <%= simple_form_for @new_post do |f| %>
                     <%= f.input :comment %>
-                    <%= f.submit 'Comment' %>
+                    <%= f.submit 'Comment', class: "btn-comment" %>
                     <%= text_field_tag :brand_id, @brand.id, class: "d-none" %>
                     <%= f.input :messageable_id, input_html:{value: post.id} , as: :hidden %>
                     <%= f.input :messageable_type, input_html:{value: "Post"} , as: :hidden %>
