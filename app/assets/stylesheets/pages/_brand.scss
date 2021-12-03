@@ -5,6 +5,16 @@
 
 .search {
   background: #f5f3f1;
+  text-align: center;
+}
+
+.form-control-search {
+  width: 45vw;
+  height: 6vh;
+  margin: 0 auto;
+   border: 2px solid #eee;
+   background-color: rgb(255, 255, 255);
+   border-radius: 35px;
 }
 
 #brands-search {
@@ -12,14 +22,14 @@
 }
 .brands-container-full {
   background: $medium;
-  padding: 100px;
+  padding: 100px 300px;
 }
 
 .search-title {
   position: relative;
-  padding-left: 580px;
   padding-top: 100px;
   color: $medium;
+  margin: 0 auto;
 }
 
   .b-container {

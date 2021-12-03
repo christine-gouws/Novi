@@ -6,7 +6,7 @@
           <%= form_with url: brands_path, method: :get, html: { class:
           'mt-4', data: { search_brands_target: 'form' } } do |f| %>
           <%= f.text_field :query,
-                      class: "form-control",
+                      class: "form-control-search",
                       placeholder: 'Type a brand name',
                       value: params[:query],
                       data: { search_brands_target: 'input', action: 'keyup->search-brands#update'} %>
